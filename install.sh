@@ -7,10 +7,11 @@ set -e
 # Make backup(s) if nessesary then copy new config to $HOME
 function copy_file {
 
-    SOURCE="$DOWNLOAD_DIR/$1"
-    TARGET="${HOME}/${1/_/.}"
+    SOURCE="$1"
+    NAME="$(basename $SOURCE)"
+    TARGET="$HOME/${NAME/_/.}"
 
-    if [ -e "${TARGET}" ]
+    if [ -e "$TARGET" ]
     then
         BACKUP="$TARGET.bak"
         if [ -e "$BACKUP" ]
@@ -20,15 +21,15 @@ function copy_file {
             BACKUP="$BACKUP.$COUNT"
         fi
         mv "$TARGET" "$BACKUP"
+        echo "Backup file $BACKUP created."
     fi
 
+    echo "Creating config file $TARGET."
     cp -r "$SOURCE" "$TARGET"
 }
 
 
 CWD="$(dirname $0)"
-DOWNLOAD_DIR="$CWD/download"
-mkdir -p "$DOWNLOAD_DIR"
 
 
 DOTFILES="
@@ -41,14 +42,14 @@ _shell-profile
 for DOTFILE in $(echo "$DOTFILES")
 do
     wget https://github.com/phunehehe/terminal-dotfiles/raw/master/"$DOTFILE" \
-         -O "$DOWNLOAD_DIR"/"$DOTFILE"
+         -O "$CWD"/"$DOTFILE" --quiet
 done
 
 
 # Copy simple config files
-for i in "$DOWNLOAD_DIR"/_*
+for DOTFILE in "$CWD"/_*
 do
-    copy_file $(basename $i)
+    copy_file $DOTFILE
 done
 
 
@@ -61,7 +62,7 @@ do
     mkdir -p "$MODULE"
     INSTALL_SCRIPT="$MODULE/install.sh"
     wget https://github.com/phunehehe/terminal-dotfiles/raw/master/"$MODULE"/install.sh \
-         -O "$INSTALL_SCRIPT"
+         -O "$INSTALL_SCRIPT" --quiet
     chmod +x "$INSTALL_SCRIPT"
     ./"$INSTALL_SCRIPT"
 done
