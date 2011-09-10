@@ -38,6 +38,7 @@ _gitconfig
 _profile
 _screenrc
 _shell-profile
+_tmux.conf
 "
 for DOTFILE in $(echo "$DOTFILES")
 do
