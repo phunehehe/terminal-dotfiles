@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+
+set -e
+
+
 # Make backup(s) if nessesary then copy new config to $HOME
 function copy_file {
 
@@ -27,6 +31,7 @@ for i in _*
 do
     copy_file $i
 done
+
 
 # Setup modules
 MODULES="

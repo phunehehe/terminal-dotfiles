@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
 
+set -e
+
+
 # Make backup(s) if nessesary then copy new config to $HOME
 function copy_file {
 
-    SOURCE="${PWD}/$1"
+    SOURCE="$CWD/$1"
     TARGET="${HOME}/${1/_/.}"
 
     if [ -e "${TARGET}" ]
@@ -25,8 +28,9 @@ function copy_file {
 
 # Prepare the directories
 
-DOWNLOAD_DIR="$PWD/download"
-VIM_DIR="$PWD/_vim"
+CWD="$(dirname $0)"
+DOWNLOAD_DIR="$CWD/download"
+VIM_DIR="$CWD/_vim"
 COLORS_DIR="$VIM_DIR/colors"
 AUTOLOAD_DIR="$VIM_DIR/autoload"
 BUNDLE_DIR="$VIM_DIR/bundle"
@@ -36,10 +40,10 @@ mkdir -p "$VIM_DIR" "$DOWNLOAD_DIR" "$COLORS_DIR" "$BUNDLE_DIR" "$AUTOLOAD_DIR"
 
 # Download and install plugins
 
-curl https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim \
-     > "$AUTOLOAD_DIR"/pathogen.vim
-curl https://raw.github.com/vim-scripts/xoria256.vim/master/colors/xoria256.vim \
-     > "$COLORS_DIR"/xoria256.vim
+wget https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim \
+     -O "$AUTOLOAD_DIR"/pathogen.vim
+wget https://raw.github.com/vim-scripts/xoria256.vim/master/colors/xoria256.vim \
+     -O "$COLORS_DIR"/xoria256.vim
 
 PLUGINS="
 scrooloose/nerdtree
@@ -54,9 +58,9 @@ done
 
 
 # The Great Move
-for ITEM in _*
+for ITEM in "$CWD"/_*
 do
-    copy_file $ITEM
+    copy_file $(basename $ITEM)
 done
 
 
