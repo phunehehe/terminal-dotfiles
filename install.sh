@@ -60,6 +60,8 @@ for MODULE in $(echo "$MODULES")
 do
     mkdir -p "$MODULE"
     INSTALL_SCRIPT="$MODULE/install.sh"
+    wget https://github.com/phunehehe/terminal-dotfiles/raw/master/"$MODULE"/install.sh \
+         -O "$INSTALL_SCRIPT"
     chmod +x "$INSTALL_SCRIPT"
     ./"$INSTALL_SCRIPT"
 done
