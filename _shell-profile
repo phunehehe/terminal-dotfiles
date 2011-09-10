@@ -1,3 +1,7 @@
 alias ls='ls -AFh --color'
 alias grep='grep --color'
+
+alias tmux="TERM=xterm-256color tmux attach"
+alias screen="TERM=xterm-256color screen"
+
 export PS1='\[\033[01;33m\]\u@\h \[\033[01;34m\]\W \$\[\033[00m\] '
