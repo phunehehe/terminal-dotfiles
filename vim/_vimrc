@@ -1,0 +1,61 @@
+" First thing first: pathogen to load everything
+call pathogen#infect()
+
+
+"" Functional options
+
+" File type detection should have been on my default
+filetype plugin indent on
+
+" Case insensitive for searching
+set ignorecase
+
+" Line numbers are good
+set number
+
+" Remove any trailing whitespace that is in the file
+autocmd BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+
+" Enable mouse support in console
+set mouse=a
+
+" Keep cursor in the middle of screen
+set scrolloff=99
+
+" Use + to copy to clipboard
+let g:clipbrdDefaultReg = '+'
+
+" Spaces no tabs
+set expandtab
+set tabstop=4
+set shiftwidth=4
+
+
+"" Display options
+
+" We should have as many colors as possible!
+set t_Co=256
+colorscheme xoria256
+
+" Have a line indicate the cursor location
+set cursorline
+
+" And transparent background too
+hi Normal ctermbg=None
+hi NonText ctermbg=None
+
+
+"" Key mappings
+
+" Remap jj to escape in insert mode.
+inoremap jj <Esc>
+
+" Ctrl-jklm changes to that split
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-l> <c-w>l
+nmap <c-h> <c-w>h
+
+"" Swap ; and : Convenient!
+"nnoremap ; :
+"nnoremap : ;
