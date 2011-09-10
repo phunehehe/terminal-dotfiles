@@ -59,7 +59,7 @@ done
 
 # And here comes the vimrc
 wget https://github.com/phunehehe/terminal-dotfiles/raw/master/vim/_vimrc \
-     -O _vimrc
+     -O "$CWD"/_vimrc
 
 
 # The Great Move
