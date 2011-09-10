@@ -7,7 +7,7 @@ set -e
 # Make backup(s) if nessesary then copy new config to $HOME
 function copy_file {
 
-    SOURCE="${PWD}/$1"
+    SOURCE="$CWD/$1"
     TARGET="${HOME}/${1/_/.}"
 
     if [ -e "${TARGET}" ]
@@ -26,10 +26,29 @@ function copy_file {
 }
 
 
-# Copy simple config files
-for i in _*
+CWD="$(dirname $0)"
+DOWNLOAD_DIR="$CWD/download"
+mkdir -p "$DOWNLOAD_DIR"
+
+
+DOTFILES="
+bashrc
+gitconfig
+profile
+screenrc
+shell-profile
+"
+for DOTFILE in $(echo "$DOTFILES")
 do
-    copy_file $i
+    wget https://github.com/phunehehe/terminal-dotfiles/raw/master/_"$DOTFILE" \
+         -O "$DOWNLOAD_DIR"/"$DOTFILE"
+done
+
+
+# Copy simple config files
+for i in "$CWD"/_*
+do
+    copy_file $(basename $i)
 done
 
 
