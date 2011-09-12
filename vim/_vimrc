@@ -4,6 +4,11 @@ call pathogen#infect()
 
 "" Functional options
 
+" Search as I type
+set incsearch
+" And highlight results too
+set hlsearch
+
 " File type detection should have been on my default
 filetype plugin indent on
 
