@@ -4,16 +4,16 @@ call pathogen#infect()
 
 "" Functional options
 
-" Search as I type
-set incsearch
-" And highlight results too
-set hlsearch
-
 " File type detection should have been on my default
 filetype plugin indent on
 
+" Search as I type
+set incsearch
+
 " Case insensitive for searching
 set ignorecase
+" But allow for case sensitive when I seem to mean it
+set smartcase
 
 " Line numbers are good
 set number
@@ -35,6 +35,24 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 
+" Always show file info
+set laststatus=2
+
+" Show title
+set title
+
+" Lemme know what I'm doing
+set showcmd
+set report=0
+
+" Be smart and try do indenting right
+set autoindent
+set smartindent
+set preserveindent
+
+" g as default flag for :substitute, make sense!
+set gdefault
+
 
 "" Display options
 
@@ -42,7 +60,7 @@ set shiftwidth=4
 set t_Co=256
 
 " Transparent background too
-autocmd ColorScheme * highlight Normal ctermbg=None
+autocmd ColorScheme * highlight Normal  ctermbg=None
 autocmd ColorScheme * highlight NonText ctermbg=None
 
 " Have a line indicate the cursor location
@@ -50,6 +68,9 @@ set cursorline
 
 " My favorite color scheme, for now
 colorscheme xoria256
+
+" Highlight search results
+set hlsearch
 
 
 "" Key mappings
