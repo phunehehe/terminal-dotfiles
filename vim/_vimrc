@@ -35,14 +35,16 @@ set shiftwidth=4
 
 " We should have as many colors as possible!
 set t_Co=256
-colorscheme xoria256
+
+" Transparent background too
+autocmd ColorScheme * highlight Normal ctermbg=None
+autocmd ColorScheme * highlight NonText ctermbg=None
 
 " Have a line indicate the cursor location
 set cursorline
 
-" And transparent background too
-hi Normal ctermbg=None
-hi NonText ctermbg=None
+" My favorite color scheme, for now
+colorscheme xoria256
 
 
 "" Key mappings
