@@ -39,18 +39,12 @@ _profile
 _screenrc
 _shell-profile
 _tmux.conf
+_zshrc
 "
 for DOTFILE in $(echo "$DOTFILES")
 do
     wget https://github.com/phunehehe/terminal-dotfiles/raw/master/"$DOTFILE" \
          -O "$CWD"/"$DOTFILE" --quiet
-done
-
-
-# Copy simple config files
-for DOTFILE in "$CWD"/_*
-do
-    copy_file $DOTFILE
 done
 
 

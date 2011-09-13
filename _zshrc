@@ -1,0 +1,15 @@
+preexec() {
+    # Set window title to current command
+    if [ -n "$STY" ]
+    then
+        printf '\ek%s\e\\' ${1:0:3}
+    fi
+}
+
+precmd() {
+    # Reset window title before displaying prompt
+    if [ -n "$STY" ]
+    then
+        printf '\ek%s\e\\' 'zsh'
+    fi
+}
