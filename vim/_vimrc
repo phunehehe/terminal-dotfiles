@@ -84,6 +84,6 @@ nmap <c-k> <c-w>k
 nmap <c-l> <c-w>l
 nmap <c-h> <c-w>h
 
-"" Swap ; and : Convenient!
-"nnoremap ; :
-"nnoremap : ;
+map <leader>f :CommandT<CR>
+map <leader>b :CommandTBuffer<CR>
+map <leader>n :NERDTreeToggle<CR>
