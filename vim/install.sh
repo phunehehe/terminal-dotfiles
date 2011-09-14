@@ -44,9 +44,9 @@ mkdir -p "$VIM_DIR" "$COLORS_DIR" "$BUNDLE_DIR" "$AUTOLOAD_DIR"
 # Download and install plugins
 
 wget https://github.com/tpope/vim-pathogen/raw/master/autoload/pathogen.vim \
-     -O "$AUTOLOAD_DIR"/pathogen.vim --quiet
+     -O "$AUTOLOAD_DIR"/pathogen.vim --quiet --no-check-certificate
 wget https://github.com/vim-scripts/xoria256.vim/raw/master/colors/xoria256.vim \
-     -O "$COLORS_DIR"/xoria256.vim --quiet
+     -O "$COLORS_DIR"/xoria256.vim --quiet --no-check-certificate
 
 PLUGINS="
 scrooloose/nerdtree
@@ -55,14 +55,15 @@ wincent/Command-T
 for PLUGIN in $(echo "$PLUGINS")
 do
     ARCHIVE="$CWD/${PLUGIN/\//-}.tar.gz"
-    wget "http://github.com/$PLUGIN/tarball/master" -O "$ARCHIVE" --quiet
+    wget "http://github.com/$PLUGIN/tarball/master" -O "$ARCHIVE" \
+         --quiet --no-check-certificate
     tar -xf "$ARCHIVE" -C "$BUNDLE_DIR"
 done
 
 
 # And here comes the vimrc
 wget https://github.com/phunehehe/terminal-dotfiles/raw/master/vim/_vimrc \
-     -O "$CWD"/_vimrc --quiet
+     -O "$CWD"/_vimrc --quiet --no-check-certificate
 
 
 # The Great Move

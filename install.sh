@@ -44,7 +44,7 @@ _zshrc
 for DOTFILE in $(echo "$DOTFILES")
 do
     wget https://github.com/phunehehe/terminal-dotfiles/raw/master/"$DOTFILE" \
-         -O "$CWD"/"$DOTFILE" --quiet
+         -O "$CWD"/"$DOTFILE" --quiet --no-check-certificate
 done
 
 
@@ -57,7 +57,7 @@ do
     mkdir -p "$MODULE"
     INSTALL_SCRIPT="$MODULE/install.sh"
     wget https://github.com/phunehehe/terminal-dotfiles/raw/master/"$MODULE"/install.sh \
-         -O "$INSTALL_SCRIPT" --quiet
+         -O "$INSTALL_SCRIPT" --quiet --no-check-certificate
     chmod +x "$INSTALL_SCRIPT"
     ./"$INSTALL_SCRIPT"
 done
