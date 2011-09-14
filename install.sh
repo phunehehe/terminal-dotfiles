@@ -45,6 +45,7 @@ for DOTFILE in $(echo "$DOTFILES")
 do
     wget https://github.com/phunehehe/terminal-dotfiles/raw/master/"$DOTFILE" \
          -O "$CWD"/"$DOTFILE" --quiet --no-check-certificate
+    copy_file "$DOTFILE"
 done
 
 
