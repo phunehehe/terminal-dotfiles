@@ -13,3 +13,5 @@ precmd() {
         printf '\ek%s\e\\' 'zsh'
     fi
 }
+
+source ~/.shell-profile
