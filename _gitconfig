@@ -1,5 +1,10 @@
 [color]
     ui = auto
-[user]
-    name = Hoang Xuan Phu
-    email = phunehehe@gmail.com
+[merge]
+	tool = vimdiff
+[mergetool]
+    prompt = false
+[diff]
+	tool = vimdiff
+[difftool]
+    prompt = false
