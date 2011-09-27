@@ -1,7 +1,7 @@
 startup_message off
 altscreen on
 
-hardstatus lastline
+hardstatus alwayslastline
 hardstatus string '%-w%n%f%t%+w%-=%H|%c'
 
 termcapinfo xterm|xterms|xs|rxvt ti@:te@
