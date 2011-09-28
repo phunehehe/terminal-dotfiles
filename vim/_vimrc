@@ -87,6 +87,6 @@ nmap <c-k> <c-w>k
 nmap <c-l> <c-w>l
 nmap <c-h> <c-w>h
 
-map <leader>f :CommandT<CR>
-map <leader>b :CommandTBuffer<CR>
+map <leader>f :FufFile<CR>
+map <leader>b :FufBuffer<CR>
 map <leader>n :NERDTreeToggle<CR>
