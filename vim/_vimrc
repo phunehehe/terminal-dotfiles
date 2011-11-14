@@ -82,11 +82,12 @@ set hlsearch
 inoremap jj <Esc>
 
 " Ctrl-jklm changes to that split
-nmap <c-j> <c-w>j
-nmap <c-k> <c-w>k
-nmap <c-l> <c-w>l
-nmap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+nnoremap <c-h> <c-w>h
 
-map <leader>f :FufFile<CR>
-map <leader>b :FufBuffer<CR>
-map <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>b :FufBuffer<CR>
+nnoremap <leader>f :FufFile<CR>
+nnoremap <leader>h :set hlsearch!<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
