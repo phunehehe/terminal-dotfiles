@@ -1,17 +1,8 @@
-preexec() {
-    # Set window title to current command
-    if [ -n "$STY" ]
-    then
-        printf '\ek%s\e\\' ${1:0:3}
-    fi
-}
+export PS1='%B%F{green}%n@%m%f %F{blue}%1~ %#%f %b'
+export HISTSIZE=10000
+export SAVEHIST=$HISTSIZE
 
-precmd() {
-    # Reset window title before displaying prompt
-    if [ -n "$STY" ]
-    then
-        printf '\ek%s\e\\' 'zsh'
-    fi
-}
+autoload -U compinit
+compinit
 
 source ~/.shell-profile
