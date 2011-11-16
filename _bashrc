@@ -1,5 +1,27 @@
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
-export PS1='\[\033[01;33m\]\u@\h \[\033[01;34m\]\W \$\[\033[00m\] '
+
+green="\[$(tput setaf 2)\]"
+yellow="\[$(tput setaf 3)\]"
+blue="\[$(tput setaf 4)\]"
+magenta="\[$(tput setaf 5)\]"
+white="\[$(tput setaf 7)\]"
+
+(( $SHLVL > 1 )) && psshlvl="[$SHLVL] "
+
+if [[ -n $SSH_TTY ]]
+then
+    host_color=$yellow
+else
+    host_color=$green
+fi
+
+if [[ $EUID == 0 ]]
+then
+    extra_style="\[$(tput smso)\]\[$(tput setab 1)\]"
+fi
+
+export PS1="$extra_style\[$(tput bold)\]$magenta$psshlvl$white\A $host_color\u@\h $blue\W \$\[$(tput sgr0)\] "
+
 source ~/.shrc

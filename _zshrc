@@ -4,8 +4,20 @@ export HISTFILE="$HOME/.history"
 setopt hist_ignore_all_dups
 
 (( $SHLVL > 1 )) && psshlvl="[$SHLVL] "
-psvar=$SSH_TTY
-export PS1="%(!.%K{red}%S.)%B%F{magenta}$psshlvl%F{white}%T %1(V.%F{yellow}.%F{green})%n@%m %F{blue}%1~ %#%f%b%s "
+
+if [[ -n $SSH_TTY ]]
+then
+    host_color="%F{yellow}"
+else
+    host_color="%F{green}"
+fi
+
+if [[ $EUID == 0 ]]
+then
+    extra_style="%K{red}%S"
+fi
+
+export PS1="$extra_style%B%F{magenta}$psshlvl%F{white}%D{%H:%M} $host_color%n@%m %F{blue}%1~ %#%f%b%s "
 
 autoload -U compinit
 compinit
