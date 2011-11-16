@@ -1,3 +1,12 @@
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
+export EDITOR=vim
+export VISUAL=vim
+alias vi=vim
+alias view=vim
+
 alias ls='ls -AFh --color'
 alias grep='grep --color'
 
@@ -5,6 +14,6 @@ alias tmux="TERM=xterm-256color tmux attach"
 alias screen="TERM=xterm-256color screen -DR"
 
 function auto_cd {
-    cd $@ && ls
+    "cd" $@ && ls
 }
 alias cd="auto_cd"

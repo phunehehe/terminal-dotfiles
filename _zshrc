@@ -10,4 +10,4 @@ export PS1="%(!.%K{red}%S.)%B%F{magenta}$psshlvl%F{white}%T %1(V.%F{yellow}.%F{g
 autoload -U compinit
 compinit
 
-source ~/.shell-profile
+source ~/.shrc
