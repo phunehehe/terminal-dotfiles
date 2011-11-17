@@ -37,7 +37,7 @@ _bashrc
 _gitconfig
 _profile
 _screenrc
-_shell-profile
+_shrc
 _tmux.conf
 _zshrc
 "
