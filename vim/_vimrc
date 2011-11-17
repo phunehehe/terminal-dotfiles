@@ -7,6 +7,9 @@ call pathogen#infect()
 " File type detection should have been on my default
 filetype plugin indent on
 
+" Some systems don't turn on syntax by default
+syntax on
+
 " Search as I type
 set incsearch
 
