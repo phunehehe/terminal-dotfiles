@@ -5,7 +5,7 @@ setopt hist_ignore_all_dups
 
 (( $SHLVL > 1 )) && psshlvl="[$SHLVL] "
 
-if [[ -n $SSH_TTY ]]
+if [[ -n $SSH_TTY || -n $SUDO_USER ]]
 then
     host_color="%F{yellow}"
 else

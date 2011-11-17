@@ -10,7 +10,7 @@ white="\[$(tput setaf 7)\]"
 
 (( $SHLVL > 1 )) && psshlvl="[$SHLVL] "
 
-if [[ -n $SSH_TTY ]]
+if [[ -n $SSH_TTY || -n $SUDO_USER ]]
 then
     host_color=$yellow
 else
