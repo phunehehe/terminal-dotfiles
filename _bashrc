@@ -1,3 +1,5 @@
+source ~/.shrc
+
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
@@ -23,5 +25,3 @@ then
 fi
 
 export PS1="$extra_style\[$(tput bold)\]$magenta$psshlvl$white\A $host_color\u@\h $blue\W \$\[$(tput sgr0)\] "
-
-source ~/.shrc
