@@ -81,6 +81,9 @@ set hlsearch
 
 "" Key mappings
 
+" Forgot to sudo when opening a file
+cmap w!! w !sudo dd of=%
+
 " Remap jj to escape in insert mode.
 inoremap jj <Esc>
 
