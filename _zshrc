@@ -1,9 +1,17 @@
 source ~/.shrc
 
+bindkey -e
+zstyle ':completion:*' use-cache on
+
 export HISTSIZE=10000
 export SAVEHIST=$HISTSIZE
 export HISTFILE="$HOME/.history"
-setopt hist_ignore_all_dups
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt SHARE_HISTORY
+setopt HIST_FCNTL_LOCK
+setopt HIST_LEX_WORDS
+setopt EXTENDED_GLOB
 
 (( $SHLVL > 1 )) && psshlvl="[$SHLVL] "
 
@@ -23,3 +31,15 @@ export PS1="$extra_style%B%F{magenta}$psshlvl%F{white}%D{%H:%M} $host_color%n@%m
 
 autoload -U compinit
 compinit
+
+bindkey "[3~" delete-char
+bindkey "[1;5C" forward-word
+bindkey "[1;5D" backward-word
+bindkey "OH" beginning-of-line
+bindkey "OF" end-of-line
+# tmux
+bindkey "[3~" delete-char
+bindkey "OC" forward-word
+bindkey "OD" backward-word
+bindkey "[1~" beginning-of-line
+bindkey "[4~" end-of-line
