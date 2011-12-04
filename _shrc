@@ -5,6 +5,8 @@ export VISUAL=vim
 alias vi=vim
 alias view=vim
 
+[[ -d ~/bin ]] && export PATH="~/bin:$PATH"
+
 alias ls='ls -AFh --color'
 alias grep='grep --color'
 
@@ -15,3 +17,8 @@ function auto_cd {
     "cd" $@ && ls
 }
 alias cd="auto_cd"
+
+function my_man {
+    "man" $@ | col -b | view -c 'set noma ft=man' -c 'au VimEnter * set nomod' -
+}
+alias man=my_man
