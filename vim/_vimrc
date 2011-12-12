@@ -93,9 +93,8 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 nnoremap <c-h> <c-w>h
 
-nnoremap <leader>b :FufBuffer<CR>
 nnoremap <leader>c :set number!<CR>
-nnoremap <leader>f :FufFile<CR>
+nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>h :set hlsearch!<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>p :set paste!<CR>

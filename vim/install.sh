@@ -50,8 +50,7 @@ wget https://github.com/vim-scripts/xoria256.vim/raw/master/colors/xoria256.vim 
 
 PLUGINS="
 nerdtree;https://github.com/scrooloose/nerdtree/tarball/master
-fuzzyfinder;https://bitbucket.org/ns9tks/vim-fuzzyfinder/get/tip.tar.gz
-l9;https://bitbucket.org/ns9tks/vim-l9/get/tip.tar.gz
+ctrlp.vim;https://github.com/kien/ctrlp.vim/tarball/master
 "
 for plugin in $(echo "$PLUGINS")
 do
