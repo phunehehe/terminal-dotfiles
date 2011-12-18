@@ -13,8 +13,6 @@ setopt HIST_FCNTL_LOCK
 setopt HIST_LEX_WORDS
 setopt EXTENDED_GLOB
 
-(( $SHLVL > 1 )) && psshlvl="[$SHLVL] "
-
 if [[ -n $SSH_TTY || -n $SUDO_USER ]]
 then
     host_color="%F{yellow}"
@@ -27,7 +25,7 @@ then
     extra_style="%K{red}%S"
 fi
 
-export PS1="$extra_style%B%F{magenta}$psshlvl%F{white}%D{%H:%M} $host_color%n@%m %F{blue}%1~ %#%f%b%s "
+export PS1="$extra_style%B%F{magenta}[%j] %F{white}%D{%H:%M} $host_color%n@%m %F{blue}%1~ %#%f%b%s "
 
 autoload -U compinit
 compinit
