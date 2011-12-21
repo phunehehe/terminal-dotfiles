@@ -13,12 +13,12 @@ alias grep='grep --color'
 alias tmux="tmux attach"
 alias screen="screen -DR"
 
-function auto_cd {
+my_cd() {
     "cd" $@ && ls
 }
-alias cd="auto_cd"
+alias cd="my_cd"
 
-function my_man {
+my_man() {
     "man" $@ | col -b | view -c 'set noma ft=man' -c 'au VimEnter * set nomod' -
 }
 alias man=my_man
