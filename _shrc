@@ -27,10 +27,12 @@ alias man=my_man
 my_rm() {
     for arg in "$@"
     do
+        # Clean up old and useless files and dirs
+        # Move this thing to the archive
         thing=$(readlink -f "$arg")
-        dir=$(dirname "$thing")
-        mkdir -p "$AR_DIR$dir"
-        mv "$thing" "$AR_DIR$thing"
+        dest_dir="$AR_DIR"$(dirname "$thing")
+        mkdir -p "$dest_dir"
+        cp -r --backup=numbered "$thing" "$dest_dir" && rm -r "$thing"
     done
 }
 alias ar=my_rm
