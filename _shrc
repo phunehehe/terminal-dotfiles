@@ -1,4 +1,5 @@
 export TERM=xterm-256color
+export AR_DIR=~/.archive
 
 export EDITOR=vim
 export VISUAL=vim
@@ -14,11 +15,22 @@ alias tmux="tmux attach"
 alias screen="screen -DR"
 
 my_cd() {
-    "cd" $@ && ls
+    "cd" "$@" && ls
 }
 alias cd="my_cd"
 
 my_man() {
-    "man" $@ | col -b | view -c 'set noma ft=man' -c 'au VimEnter * set nomod' -
+    "man" "$@" | col -b | view -c 'set noma ft=man' -c 'au VimEnter * set nomod' -
 }
 alias man=my_man
+
+my_rm() {
+    for arg in "$@"
+    do
+        thing=$(readlink -f "$arg")
+        dir=$(dirname "$thing")
+        mkdir -p "$AR_DIR$dir"
+        mv "$thing" "$AR_DIR$thing"
+    done
+}
+alias ar=my_rm
