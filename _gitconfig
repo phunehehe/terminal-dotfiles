@@ -10,3 +10,4 @@
     prompt = false
 [core]
 	filemode = false
+	autocrlf = false
