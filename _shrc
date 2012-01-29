@@ -1,5 +1,6 @@
 export TERM=xterm-256color
 export AR_DIR=~/.archive
+export MANPAGER="/bin/sh -c \"col -b | vim -c 'set noma buftype=nofile ft=man' -\""
 
 export EDITOR=vim
 export VISUAL=vim
@@ -18,11 +19,6 @@ my_cd() {
     "cd" "$@" && ls
 }
 alias cd="my_cd"
-
-my_man() {
-    "man" "$@" | col -b | view -c 'set noma ft=man' -c 'au VimEnter * set nomod' -
-}
-alias man=my_man
 
 my_rm() {
     for arg in "$@"
