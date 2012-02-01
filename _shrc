@@ -11,7 +11,8 @@ extra_path=~/bin
 [[ -d $extra_path ]] && [[ ":$PATH:" != *":$extra_path:"* ]] && PATH="$extra_path:$PATH"
 
 alias ls='ls -AFh --color'
-alias grep='grep --color'
+alias grep='grep --binary-files=without-match --color'
+alias locate='locate --existing'
 
 alias tmux="tmux attach"
 alias screen="screen -DR"
