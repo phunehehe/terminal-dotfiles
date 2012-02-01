@@ -36,6 +36,7 @@ DOTFILES="
 _bashrc
 _gitconfig
 _profile
+_psqlrc
 _screenrc
 _shrc
 _tmux.conf
