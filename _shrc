@@ -1,6 +1,6 @@
 export TERM=xterm-256color
 export AR_DIR=~/.archive
-export MANPAGER="vim -c '%s/\[[0-9]*m//' -c 'set noma buftype=nofile ft=man' -"
+export MANPAGER="vim -c '%s/_\|.\|\[[0-9]*m//e' -c 'set noma buftype=nofile ft=man' -"
 
 export EDITOR=vim
 export VISUAL=vim
