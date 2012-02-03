@@ -100,8 +100,11 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 nnoremap <c-h> <c-w>h
 
+nnoremap <c-n> :cnext<CR>
+nnoremap <c-p> :cprevious<CR>
+
 nnoremap <leader>c :set number!<CR>
-nnoremap <leader>f :CtrlP<CR>
+let g:ctrlp_map = '<leader>f'
 nnoremap <leader>h :set hlsearch!<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>p :set paste!<CR>
