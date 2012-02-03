@@ -13,8 +13,11 @@ alias locate='locate --existing'
 alias tmux="tmux attach"
 alias screen="screen -DR"
 
-extra_path=~/bin
-[[ -d $extra_path ]] && [[ ":$PATH:" != *":$extra_path:"* ]] && PATH="$extra_path:$PATH"
+path_extras="/sbin /usr/sbin /usr/local/sbin ~/bin"
+for extra in $(echo $path_extras)
+    do
+    [[ -d $extra ]] && [[ ":$PATH:" != *":$extra:"* ]] && PATH="$extra:$PATH"
+done
 
 my_cd() {
     "cd" "$@" && ls
