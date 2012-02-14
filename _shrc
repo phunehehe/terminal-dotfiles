@@ -9,7 +9,7 @@ alias vi=vim
 alias view=vim
 alias ls='ls -AFh --color'
 alias grep='grep --binary-files=without-match --color'
-alias locate='locate --existing'
+alias locate='locate --basename --existing'
 alias tmux="tmux attach"
 alias screen="screen -DR"
 
@@ -32,7 +32,7 @@ my_rm() {
         thing=$(readlink -f "$arg")
         dest_dir="$AR_DIR"$(dirname "$thing")
         mkdir -p "$dest_dir"
-        cp -r --backup=numbered "$thing" "$dest_dir" && rm -r "$thing"
+        cp -r --backup=numbered "$thing" "$dest_dir" && rm -rf "$thing"
     done
 }
 alias ar=my_rm
