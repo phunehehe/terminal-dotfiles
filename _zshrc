@@ -1,4 +1,4 @@
-source ~/.shrc
+. ~/.shrc
 
 bindkey -e
 zstyle ':completion:*' use-cache on
