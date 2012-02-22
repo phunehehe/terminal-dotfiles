@@ -47,17 +47,16 @@ wget https://github.com/vim-scripts/xoria256.vim/raw/master/colors/xoria256.vim 
      -O "$colors_dir"/xoria256.vim --quiet --no-check-certificate
 
 plugins="
-nerdtree;https://github.com/scrooloose/nerdtree/tarball/master
-ctrlp.vim;https://github.com/kien/ctrlp.vim/tarball/master
-easymotion;https://github.com/Lokaltog/vim-easymotion/tarball/master
+https://github.com/scrooloose/nerdtree/tarball/master
+https://github.com/kien/ctrlp.vim/tarball/master
+https://github.com/Lokaltog/vim-easymotion/tarball/master
 "
-for plugin in $(echo "$plugins")
+for url in $(echo "$plugins")
 do
-    name=${plugin%;*}
-    url=${plugin#*;}
-    archive="$cwd/$name.tar.gz"
+    archive="$cwd/master.tar.gz"
     wget "$url" -O "$archive" --quiet --no-check-certificate
     tar -xf "$archive" -C "$bundle_dir"
+    rm "$archive"
 done
 
 
