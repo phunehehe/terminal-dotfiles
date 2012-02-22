@@ -1,27 +1,25 @@
 #!/usr/bin/env bash
 
-
 set -e
-
 
 # Make backup(s) if nessesary then copy new config to $HOME
 function copy_file {
 
     source_file="$1"
-    NAME="$(basename $source_file)"
-    target="$HOME/${NAME/_/.}"
+    name="$(basename $source_file)"
+    target="$HOME/${name/_/.}"
 
     if [ -e "$target" ]
     then
-        BACKUP="$target.bak"
-        if [ -e "$BACKUP" ]
+        backup="$target.bak"
+        if [ -e "$backup" ]
         then
-            COUNT=0
-            while [ -e "$BACKUP.$COUNT" ]; do let "COUNT += 1"; done
-            BACKUP="$BACKUP.$COUNT"
+            count=0
+            while [ -e "$backup.$count" ]; do let "count += 1"; done
+            backup="$backup.$count"
         fi
-        mv "$target" "$BACKUP"
-        echo "Backup file $BACKUP created."
+        mv "$target" "$backup"
+        echo "Backup file $backup created."
     fi
 
     echo "Creating config file $target."
@@ -33,26 +31,26 @@ function copy_file {
 
 cwd="$(dirname $0)"
 
-VIM_DIR="$cwd/_vim"
-COLORS_DIR="$VIM_DIR/colors"
-AUTOLOAD_DIR="$VIM_DIR/autoload"
-bundle_dir="$VIM_DIR/bundle"
+vim_dir="$cwd/_vim"
+colors_dir="$vim_dir/colors"
+autoload_dir="$vim_dir/autoload"
+bundle_dir="$vim_dir/bundle"
 
-mkdir -p "$VIM_DIR" "$COLORS_DIR" "$bundle_dir" "$AUTOLOAD_DIR"
+mkdir -p "$vim_dir" "$colors_dir" "$bundle_dir" "$autoload_dir"
 
 
 # Download and install plugins
 
 wget https://github.com/tpope/vim-pathogen/raw/master/autoload/pathogen.vim \
-     -O "$AUTOLOAD_DIR"/pathogen.vim --quiet --no-check-certificate
+     -O "$autoload_dir"/pathogen.vim --quiet --no-check-certificate
 wget https://github.com/vim-scripts/xoria256.vim/raw/master/colors/xoria256.vim \
-     -O "$COLORS_DIR"/xoria256.vim --quiet --no-check-certificate
+     -O "$colors_dir"/xoria256.vim --quiet --no-check-certificate
 
-PLUGINS="
+plugins="
 nerdtree;https://github.com/scrooloose/nerdtree/tarball/master
 ctrlp.vim;https://github.com/kien/ctrlp.vim/tarball/master
 "
-for plugin in $(echo "$PLUGINS")
+for plugin in $(echo "$plugins")
 do
     name=${plugin%;*}
     url=${plugin#*;}
@@ -68,7 +66,7 @@ wget https://github.com/phunehehe/terminal-dotfiles/raw/master/vim/_vimrc \
 
 
 # The Great Move
-for ITEM in "$cwd"/_*
+for item in "$cwd"/_*
 do
-    copy_file $ITEM
+    copy_file $item
 done
