@@ -49,6 +49,7 @@ wget https://github.com/vim-scripts/xoria256.vim/raw/master/colors/xoria256.vim 
 plugins="
 nerdtree;https://github.com/scrooloose/nerdtree/tarball/master
 ctrlp.vim;https://github.com/kien/ctrlp.vim/tarball/master
+easymotion;https://github.com/Lokaltog/vim-easymotion/tarball/master
 "
 for plugin in $(echo "$plugins")
 do
