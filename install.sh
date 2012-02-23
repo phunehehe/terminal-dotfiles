@@ -34,6 +34,7 @@ CWD="$(dirname $0)"
 
 DOTFILES="
 _bashrc
+_gemrc
 _gitconfig
 _profile
 _psqlrc
