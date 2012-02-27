@@ -100,8 +100,17 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 nnoremap <c-h> <c-w>h
 
+" Next/previous in quickfix list
 nnoremap <c-n> :cnext<CR>
 nnoremap <c-p> :cprevious<CR>
+
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
+" Improve up/down movement on wrapped lines
+nnoremap j gj
+nnoremap k gk
 
 nnoremap <leader>c :set number!<CR>
 let g:ctrlp_map = '<leader>f'
