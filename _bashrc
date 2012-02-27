@@ -1,3 +1,5 @@
+#!/bin/bash
+
 . ~/.shrc
 
 export HISTCONTROL=erasedups
