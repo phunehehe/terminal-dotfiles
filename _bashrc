@@ -12,14 +12,14 @@ blue="\[$(tput setaf 4)\]"
 magenta="\[$(tput setaf 5)\]"
 white="\[$(tput setaf 7)\]"
 
-if [[ -n $SSH_TTY || -n $SUDO_USER ]]
+if test -n "$SSH_TTY" || test -n "$SUDO_USER"
 then
     host_color=$yellow
 else
     host_color=$green
 fi
 
-if [[ $EUID == 0 ]]
+if test "$EUID" = 0
 then
     extra_style="\[$(tput smso)\]\[$(tput setab 1)\]"
 fi

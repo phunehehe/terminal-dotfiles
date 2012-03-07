@@ -18,7 +18,7 @@ alias screen="screen -DR"
 path_extras="/sbin /usr/sbin /usr/local/sbin $HOME/bin"
 for extra in $(echo $path_extras)
     do
-    [[ -d $extra ]] && [[ ":$PATH:" != *":$extra:"* ]] && PATH="$extra:$PATH"
+    test -d $extra && test ":$PATH:" != "*:$extra:*" && PATH="$extra:$PATH"
 done
 
 my_cd() {
