@@ -115,5 +115,9 @@ nnoremap k gk
 nnoremap <leader>c :set number!<CR>
 let g:ctrlp_map = '<leader>f'
 nnoremap <leader>h :set hlsearch!<CR>
-nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeFind<CR>
 nnoremap <leader>p :set paste!<CR>
+
+set list
+set listchars=tab:»\ ,trail:⋅,extends:❯,precedes:❮
+set showbreak=↪
