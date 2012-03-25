@@ -50,6 +50,8 @@ plugins="
 https://github.com/scrooloose/nerdtree/tarball/master
 https://github.com/kien/ctrlp.vim/tarball/master
 https://github.com/Lokaltog/vim-easymotion/tarball/master
+https://github.com/pangloss/vim-javascript/tarball/master
+https://github.com/kchmck/vim-coffee-script/tarball/master
 "
 for url in $(echo "$plugins")
 do

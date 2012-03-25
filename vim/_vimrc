@@ -63,6 +63,15 @@ set preserveindent
 " g as default flag for :substitute, make sense!
 set gdefault
 
+" Show funny characters!
+set list
+set listchars=tab:»\ ,trail:⋅,extends:❯,precedes:❮
+set showbreak=↪
+
+" Fold by indentation, fine for most programming languages
+set foldmethod=indent
+set foldnestmax=1
+
 
 "" Display options
 
@@ -104,10 +113,6 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-n> :cnext<CR>
 nnoremap <c-p> :cprevious<CR>
 
-" Reselect visual block after indent/outdent
-vnoremap < <gv
-vnoremap > >gv
-
 " Improve up/down movement on wrapped lines
 nnoremap j gj
 nnoremap k gk
@@ -117,7 +122,4 @@ let g:ctrlp_map = '<leader>f'
 nnoremap <leader>h :set hlsearch!<CR>
 nnoremap <leader>n :NERDTreeFind<CR>
 nnoremap <leader>p :set paste!<CR>
-
-set list
-set listchars=tab:»\ ,trail:⋅,extends:❯,precedes:❮
-set showbreak=↪
+nnoremap <space> za

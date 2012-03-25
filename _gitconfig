@@ -1,13 +1,11 @@
 [color]
     ui = auto
 [merge]
-	tool = vimdiff
-[mergetool]
-    prompt = false
+    tool = vimdiff
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 [difftool]
     prompt = false
 [core]
-	filemode = false
-	autocrlf = false
+    filemode = false
+    autocrlf = false
