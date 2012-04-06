@@ -4,6 +4,16 @@ call pathogen#infect()
 
 "" Functional options
 
+" Smart tab completion
+function! CompleteOrTab()
+    if (strpart(getline('.'),col('.')-2,1)!~'\w')
+        return "\<Tab>"
+    else
+        return "\<C-n>"
+    endif
+endfunction
+imap <Tab> <C-R>=CompleteOrTab()<CR>
+
 " Swap files in their own place
 set directory=~/.vim/swap//
 
