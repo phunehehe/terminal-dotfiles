@@ -4,16 +4,6 @@ call pathogen#infect()
 
 "" Functional options
 
-" Smart tab completion
-function! CompleteOrTab()
-    if (strpart(getline('.'),col('.')-2,1)!~'\w')
-        return "\<Tab>"
-    else
-        return "\<C-n>"
-    endif
-endfunction
-imap <Tab> <C-R>=CompleteOrTab()<CR>
-
 " Swap files in their own place
 set directory=~/.vim/swap//
 
@@ -118,7 +108,7 @@ set grepprg=grep\ -HIn\ $*\ /dev/null
 cnoremap w!! %!sudo tee > /dev/null %
 
 " Remap jj to escape in insert mode.
-inoremap jj <Esc>
+inoremap jj <esc>
 
 " Ctrl-jklm changes to that split
 nnoremap <c-j> <c-w>j
@@ -127,16 +117,27 @@ nnoremap <c-l> <c-w>l
 nnoremap <c-h> <c-w>h
 
 " Next/previous in quickfix list
-nnoremap <c-n> :cnext<CR>
-nnoremap <c-p> :cprevious<CR>
+nnoremap <c-n> :cnext<cr>
+nnoremap <c-p> :cprevious<cr>
 
 " Improve up/down movement on wrapped lines
 nnoremap j gj
 nnoremap k gk
 
-nnoremap <leader>c :set number!<CR>
+nnoremap <leader>c :set number!<cr>
 let g:ctrlp_map = '<leader>f'
-nnoremap <leader>h :nohlsearch<CR>
-nnoremap <leader>n :NERDTreeFind<CR>
-nnoremap <leader>p :set paste!<CR>
+nnoremap <leader>h :nohlsearch<cr>
+nnoremap <leader>n :NERDTreeFind<cr>
+nnoremap <leader>p :set paste!<cr>
 nnoremap <space> za
+nnoremap * :set hlsearch<cr>:let @/=expand("<cword>")<cr>
+
+" Smart tab completion
+function! CompleteOrTab()
+    if (strpart(getline('.'),col('.')-2,1)!~'\w')
+        return "\<tab>"
+    else
+        return "\<c-n>"
+    endif
+endfunction
+inoremap <tab> <c-r>=CompleteOrTab()<cr>
