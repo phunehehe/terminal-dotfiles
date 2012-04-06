@@ -4,6 +4,9 @@ call pathogen#infect()
 
 "" Functional options
 
+" Swap files in their own place
+set directory=~/.vim/swap//
+
 " File type detection should have been on my default
 filetype plugin indent on
 
@@ -94,11 +97,14 @@ set hlsearch
 " ctrl.vim should use current directory
 let g:ctrlp_working_path_mode = 0
 
+" grep ignores binary files
+set grepprg=grep\ -HIn\ $*\ /dev/null
+
 
 "" Key mappings
 
 " Forgot to sudo when opening a file
-cnoremap w!! w !sudo dd of=%
+cnoremap w!! %!sudo tee > /dev/null %
 
 " Remap jj to escape in insert mode.
 inoremap jj <Esc>
