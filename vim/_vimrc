@@ -167,7 +167,7 @@ nnoremap <leader>n :NERDTreeFind<cr>
 nnoremap <leader>h :nohlsearch<cr>
 
 " * only highlight, not move
-nnoremap * :set hlsearch<cr>:let @/=expand("<cword>")<cr>
+nnoremap * :set hlsearch<cr>:let @/="\\<".expand("<cword>")."\\>"<cr>
 
 " Quick paste toggle
 nnoremap <leader>p :set paste!<cr>
