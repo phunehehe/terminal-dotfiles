@@ -35,8 +35,9 @@ vim_dir="$cwd/_vim"
 colors_dir="$vim_dir/colors"
 autoload_dir="$vim_dir/autoload"
 bundle_dir="$vim_dir/bundle"
+swap_dir="$vim_dir/swap"
 
-mkdir -p "$vim_dir" "$colors_dir" "$bundle_dir" "$autoload_dir"
+mkdir -p "$vim_dir" "$colors_dir" "$bundle_dir" "$autoload_dir" "$swap_dir"
 
 
 # Download and install plugins
