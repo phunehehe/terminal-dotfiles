@@ -38,6 +38,7 @@ bundle_dir="$vim_dir/bundle"
 swap_dir="$vim_dir/swap"
 
 mkdir -p "$vim_dir" "$colors_dir" "$bundle_dir" "$autoload_dir" "$swap_dir"
+chmod 777 "$swap_dir"
 
 
 # Download and install plugins
