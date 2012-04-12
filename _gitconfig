@@ -4,8 +4,6 @@
     tool = vimdiff
 [diff]
     tool = vimdiff
-[difftool]
-    prompt = false
 [core]
     filemode = false
     autocrlf = false
