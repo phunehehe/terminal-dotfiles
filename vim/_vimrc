@@ -39,9 +39,6 @@ endfunction
 
 "" Functional options
 
-" Swap files in their own place
-set directory=~/.vim/swap//
-
 " File type detection should have been on my default
 filetype plugin indent on
 
