@@ -23,7 +23,7 @@ function copy_file {
     fi
 
     echo "Creating config file $target."
-    cp -r "$source_file" "$target"
+    mv "$source_file" "$target"
 }
 
 
