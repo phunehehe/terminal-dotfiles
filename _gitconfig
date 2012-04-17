@@ -7,3 +7,4 @@
 [core]
     filemode = false
     autocrlf = false
+    excludesfile = ~/.gitignore
