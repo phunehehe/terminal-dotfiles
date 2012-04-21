@@ -2,11 +2,12 @@
 
 export TERM=xterm-256color
 export AR_DIR=~/.archive
-export MANPAGER="vim -c '%s/_\|.\|\[[0-9]*m//e' -c 'set nomodifiable nonumber buftype=nofile filetype=man' -"
+export MANPAGER="vim -c '%s/_\|.\|\[[0-9]*m//e' -c 'set nomodifiable nonumber buftype=nofile filetype=man' -c 'goto' -"
 export EDITOR=vim
 export VISUAL=vim
 export PAGER=less
 
+alias rm=my_rm
 alias vi=vim
 alias view=vim
 alias ls='ls -AFh --color'
@@ -14,6 +15,7 @@ alias grep='grep --binary-files=without-match --color'
 alias locate='locate --basename --existing'
 alias tmux="tmux attach"
 alias screen="screen -DR"
+alias cd="my_cd"
 
 path_extras="/sbin /usr/sbin /usr/local/sbin $HOME/bin"
 for extra in $(echo $path_extras)
@@ -24,7 +26,12 @@ done
 my_cd() {
     "cd" "$@" && ls
 }
-alias cd="my_cd"
+
+purge() {
+    target="${1:-.}"
+    find "$target" -type f -mtime +7 -exec rm {} \;
+    find "$target" -type d -empty -exec rmdir {} \;
+}
 
 my_rm() {
     for arg in "$@"
@@ -38,7 +45,5 @@ my_rm() {
         find "$destination" -type f -exec touch {} \;
     done
     # Clean up old and useless files and dirs
-    find "$AR_DIR" -type f -mtime +7 -exec rm {} \;
-    find "$AR_DIR" -type d -empty -exec rmdir {} \;
+    purge "$AR_DIR"
 }
-alias rm=my_rm
