@@ -29,12 +29,16 @@ alias cd="my_cd"
 my_rm() {
     for arg in "$@"
     do
-        # Clean up old and useless files and dirs
         # Move this thing to the archive
         thing=$(readlink -f "$arg")
         dest_dir="$AR_DIR"$(dirname "$thing")
+        destination="$dest_dir/$(basename "$thing").$(date +'%Y-%m-%d_%H-%M-%S')"
         mkdir -p "$dest_dir"
-        cp -r --backup=numbered "$thing" "$dest_dir" && rm -rf "$thing"
+        mv "$thing" "$destination"
+        find "$destination" -type f -exec touch {} \;
     done
+    # Clean up old and useless files and dirs
+    find "$AR_DIR" -type f -mtime +7 -exec rm {} \;
+    find "$AR_DIR" -type d -empty -exec rmdir {} \;
 }
-alias ar=my_rm
+alias rm=my_rm
