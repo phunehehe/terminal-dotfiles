@@ -66,6 +66,9 @@ autocmd BufWrite * if ! &bin | call DoAndComeBack("%s/\\s\\+$//e") | endif
 " I don't mean Make, I mean Mako
 autocmd BufRead *.mak set filetype=html
 
+" Automatically disable paste mode
+au InsertLeave * set nopaste
+
 " Enable mouse support in console
 set mouse=a
 
