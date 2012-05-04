@@ -54,6 +54,7 @@ https://github.com/kien/ctrlp.vim/tarball/master
 https://github.com/Lokaltog/vim-easymotion/tarball/master
 https://github.com/pangloss/vim-javascript/tarball/master
 https://github.com/kchmck/vim-coffee-script/tarball/master
+https://github.com/tpope/vim-fugitive/tarball/master
 "
 for url in $(echo "$plugins")
 do
