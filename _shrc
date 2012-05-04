@@ -10,7 +10,7 @@ export PAGER=less
 alias rm=my_rm
 alias vi=vim
 alias view=vim
-alias ls='ls -AFh --color'
+alias ls='ls -AFh --color=auto'
 alias grep='grep --binary-files=without-match --color'
 alias locate='locate --basename --existing'
 alias tmux="tmux attach"
