@@ -39,6 +39,10 @@ endfunction
 
 "" Functional options
 
+" Unicode FTW
+set fileencoding=utf8
+set fileencodings=utf8
+
 " File type detection should have been on my default
 filetype plugin indent on
 
