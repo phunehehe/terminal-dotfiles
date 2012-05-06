@@ -17,4 +17,4 @@ Copy and paste for the lazy:
 
 Those commands will create a script named `rcsync.sh` in the current directory. The script will download and setup config files and any necessary plugins etc under `$HOME`. The script can be used again and again to sync the config. Existing dotfiles will be backed up, just in case.
 
-See my blog post [Keeping dotfiles in sync using GitHub](http://phunehehe.isgreat.org/2011/keeping-dotfiles-in-sync-using-github/) for a discussion on how to keep the same configurations on many machines.
+See my blog post [Keeping dotfiles in sync using GitHub](http://phunehehe.is-great.org/2011/keeping-dotfiles-in-sync-using-github/) for a discussion on how to keep the same configurations on many machines.
