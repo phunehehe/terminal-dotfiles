@@ -2,6 +2,7 @@
 
 set -e
 
+
 # Make backup(s) if nessesary then copy new config to $HOME
 function copy_file {
 
@@ -43,31 +44,29 @@ chmod 777 "$swap_dir"
 
 # Download and install plugins
 
-wget https://github.com/tpope/vim-pathogen/raw/master/autoload/pathogen.vim \
-     -O "$autoload_dir"/pathogen.vim --quiet --no-check-certificate
-wget https://github.com/vim-scripts/xoria256.vim/raw/master/colors/xoria256.vim \
-     -O "$colors_dir"/xoria256.vim --quiet --no-check-certificate
+$curl > "$autoload_dir"/pathogen.vim \
+     https://github.com/tpope/vim-pathogen/raw/master/autoload/pathogen.vim
+$curl > "$colors_dir"/xoria256.vim \
+     https://github.com/vim-scripts/xoria256.vim/raw/master/colors/xoria256.vim
 
-plugins="
+plugins=(
 https://github.com/scrooloose/nerdtree/tarball/master
 https://github.com/kien/ctrlp.vim/tarball/master
 https://github.com/Lokaltog/vim-easymotion/tarball/master
 https://github.com/pangloss/vim-javascript/tarball/master
 https://github.com/kchmck/vim-coffee-script/tarball/master
 https://github.com/tpope/vim-fugitive/tarball/master
-"
-for url in $(echo "$plugins")
+)
+for url in "${plugins[@]}"
 do
     archive="$cwd/master.tar.gz"
-    wget "$url" -O "$archive" --quiet --no-check-certificate
-    tar -xf "$archive" -C "$bundle_dir"
-    rm "$archive"
+    $curl "$url" | tar -xz -C "$bundle_dir"
 done
 
 
 # And here comes the vimrc
-wget https://github.com/phunehehe/terminal-dotfiles/raw/master/vim/_vimrc \
-     -O "$cwd"/_vimrc --quiet --no-check-certificate
+$curl > "$cwd"/_vimrc \
+     https://github.com/phunehehe/terminal-dotfiles/raw/master/vim/_vimrc \
 
 
 # The Great Move

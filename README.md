@@ -4,14 +4,9 @@ Copy and paste for the lazy:
 
     cat > rcsync.sh <<RCSYNC
     #!/bin/sh
-    rm -rf temp-dotfiles
-    mkdir -p temp-dotfiles
-    cd temp-dotfiles
-    wget https://github.com/phunehehe/terminal-dotfiles/raw/master/install.sh --no-check-certificate
-    chmod +x install.sh
-    ./install.sh
+    rm -rf temp-dotfiles; mkdir -p temp-dotfiles; cd temp-dotfiles
+    curl --insecure https://raw.github.com/phunehehe/terminal-dotfiles/master/install.sh | bash -s
     RCSYNC
-
     chmod +x rcsync.sh
     ./rcsync.sh
 

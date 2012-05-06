@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-
 set -e
+
+export curl='curl --insecure --location --silent --show-error'
 
 
 # Make backup(s) if nessesary then copy new config to $HOME
@@ -25,14 +26,14 @@ function copy_file {
     fi
 
     echo "Creating config file $TARGET."
-    cp -r "$SOURCE" "$TARGET"
+    mv "$SOURCE" "$TARGET"
 }
 
 
 CWD="$(dirname $0)"
 
 
-DOTFILES="
+DOTFILES=(
 _bashrc
 _gemrc
 _gitconfig
@@ -42,25 +43,21 @@ _screenrc
 _shrc
 _tmux.conf
 _zshrc
-"
-for DOTFILE in $(echo "$DOTFILES")
+)
+for DOTFILE in "${DOTFILES[@]}"
 do
-    wget https://github.com/phunehehe/terminal-dotfiles/raw/master/"$DOTFILE" \
-         -O "$CWD"/"$DOTFILE" --quiet --no-check-certificate
+    $curl > "$CWD/$DOTFILE" \
+         https://github.com/phunehehe/terminal-dotfiles/raw/master/"$DOTFILE"
     copy_file "$DOTFILE"
 done
 
 
 # Setup modules
-MODULES="
+MODULES=(
 vim
-"
-for MODULE in $(echo "$MODULES")
+)
+for MODULE in "${MODULES[@]}"
 do
     mkdir -p "$MODULE"
-    INSTALL_SCRIPT="$MODULE/install.sh"
-    wget https://github.com/phunehehe/terminal-dotfiles/raw/master/"$MODULE"/install.sh \
-         -O "$INSTALL_SCRIPT" --quiet --no-check-certificate
-    chmod +x "$INSTALL_SCRIPT"
-    ./"$INSTALL_SCRIPT"
+    $curl https://github.com/phunehehe/terminal-dotfiles/raw/master/"$MODULES"/install.sh | bash -s
 done
