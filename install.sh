@@ -37,6 +37,7 @@ DOTFILES=(
 _bashrc
 _gemrc
 _gitconfig
+_my.cnf
 _profile
 _psqlrc
 _screenrc
