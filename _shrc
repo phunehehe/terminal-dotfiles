@@ -7,7 +7,6 @@ export EDITOR=vim
 export VISUAL=vim
 export PAGER=less
 
-alias rm=my_rm
 alias vi=vim
 alias view=vim
 alias ls='ls -AFh --color=auto'
@@ -31,19 +30,4 @@ purge() {
     target="${1:-.}"
     find "$target" -type f -mtime +7 -exec rm {} \;
     find "$target" -type d -empty -exec rmdir {} \;
-}
-
-my_rm() {
-    for arg in "$@"
-    do
-        # Move this thing to the archive
-        thing=$(readlink -f "$arg")
-        dest_dir="$AR_DIR"$(dirname "$thing")
-        destination="$dest_dir/$(basename "$thing").$(date +'%Y-%m-%d_%H-%M-%S')"
-        mkdir -p "$dest_dir"
-        mv "$thing" "$destination"
-        find "$destination" -type f -exec touch {} \;
-    done
-    # Clean up old and useless files and dirs
-    purge "$AR_DIR"
 }
