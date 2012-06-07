@@ -67,7 +67,9 @@ set number
 autocmd BufWrite * if ! &bin | call DoAndComeBack("%s/\\s\\+$//e") | endif
 
 " I don't mean Make, I mean Mako
-autocmd BufRead *.mak set filetype=html
+autocmd BufNewFile,BufRead *.mak  set filetype=html
+" JSON syntax highlighting for free
+autocmd BufNewFile,BufRead *.json set filetype=javascript
 
 " Automatically disable paste mode
 au InsertLeave * set nopaste
