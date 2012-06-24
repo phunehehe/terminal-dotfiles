@@ -30,14 +30,14 @@ export PS1="$extra_style%B%F{magenta}[%j] %F{white}%D{%H:%M} $host_color%n@%m %F
 autoload -U compinit
 compinit
 
-bindkey "[3~" delete-char
+bindkey "[3~"   delete-char
+bindkey "OH"    beginning-of-line
+bindkey "[H"    beginning-of-line
+bindkey "[1~"   beginning-of-line
+bindkey "[4~"   end-of-line
+bindkey "[F"    end-of-line
+bindkey "OF"    end-of-line
 bindkey "[1;5C" forward-word
+bindkey "OC"    forward-word
 bindkey "[1;5D" backward-word
-bindkey "OH" beginning-of-line
-bindkey "OF" end-of-line
-# tmux
-bindkey "[3~" delete-char
-bindkey "OC" forward-word
-bindkey "OD" backward-word
-bindkey "[1~" beginning-of-line
-bindkey "[4~" end-of-line
+bindkey "OD"    backward-word
