@@ -56,6 +56,8 @@ https://github.com/Lokaltog/vim-easymotion/tarball/master
 https://github.com/pangloss/vim-javascript/tarball/master
 https://github.com/kchmck/vim-coffee-script/tarball/master
 https://github.com/tpope/vim-fugitive/tarball/master
+https://github.com/tpope/vim-eunuch/tarball/master
+https://github.com/tpope/vim-surround/tarball/master
 )
 for url in "${plugins[@]}"
 do
