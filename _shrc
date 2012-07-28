@@ -31,3 +31,6 @@ purge() {
     find "$target" -type f -mtime +7 -exec rm {} \;
     find "$target" -type d -empty -exec rmdir {} \;
 }
+
+local_config="$HOME/.shrc-local"
+[[ -f "$local_config" ]] && . "$local_config"
