@@ -1,5 +1,6 @@
 [color]
     ui = auto
+    diff = false
 [merge]
     tool = vimdiff
 [diff]
@@ -8,3 +9,4 @@
     filemode = false
     autocrlf = false
     excludesfile = ~/.gitignore
+    pager = vim -c 'set nonumber buftype=nofile' -
