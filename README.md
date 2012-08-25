@@ -1,15 +1,16 @@
-Dotfiles for terminal programs that I will use to deploy to all servers I work with.
+This is intended for my personal use. If you want to use it, at least fork the repo and change the identity in `_gitconfig`.
 
-Copy and paste for the lazy:
+Copy and paste for the lazy me:
 
-    cat > rcsync.sh <<RCSYNC
-    #!/bin/sh
-    rm -rf temp-dotfiles; mkdir -p temp-dotfiles; cd temp-dotfiles
-    curl --insecure https://raw.github.com/phunehehe/terminal-dotfiles/master/install.sh | bash -s
-    RCSYNC
-    chmod +x rcsync.sh
-    ./rcsync.sh
+    git clone --recursive git://github.com/phunehehe/terminal-dotfiles.git
+    ./terminal-dotfiles/install.sh
 
-Those commands will create a script named `rcsync.sh` in the current directory. The script will download and setup config files and any necessary plugins etc under `$HOME`. The script can be used again and again to sync the config. Existing dotfiles will be backed up, just in case.
+Existing dotfiles will be backed up, just in case. To delete them in one fell swoop:
 
-See my blog post [Keeping dotfiles in sync using GitHub](http://phunehehe.is-great.org/2011/keeping-dotfiles-in-sync-using-github/) for a discussion on how to keep the same configurations on many machines.
+    rm -r .*.terminal-dotfiles-*
+
+To update an existing installation:
+
+    cd terminal-dotfiles
+    git submodule update --init --recursive
+    ./install.sh
