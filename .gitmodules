@@ -22,3 +22,6 @@
 [submodule "vim/_vim/bundle/vim-surround"]
 	path = vim/_vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule "vim/vim-pathogen"]
+	path = vim/vim-pathogen
+	url = git://github.com/tpope/vim-pathogen.git
