@@ -10,3 +10,6 @@
     autocrlf = false
     excludesfile = ~/.gitignore
     pager = vim -c 'set nonumber buftype=nofile' -
+[user]
+    email = phunehehe@gmail.com
+    name = Hoang Xuan Phu
