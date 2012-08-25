@@ -1,0 +1,24 @@
+[submodule "vim/_vim/bundle/nerdtree"]
+	path = vim/_vim/bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule "vim/_vim/bundle/ctrlp.vim"]
+	path = vim/_vim/bundle/ctrlp.vim
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/_vim/bundle/vim-easymotion"]
+	path = vim/_vim/bundle/vim-easymotion
+	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "vim/_vim/bundle/vim-javascript"]
+	path = vim/_vim/bundle/vim-javascript
+	url = git://github.com/pangloss/vim-javascript.git
+[submodule "vim/_vim/bundle/vim-coffee-script"]
+	path = vim/_vim/bundle/vim-coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "vim/_vim/bundle/vim-fugitive"]
+	path = vim/_vim/bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "vim/_vim/bundle/vim-eunuch"]
+	path = vim/_vim/bundle/vim-eunuch
+	url = git://github.com/tpope/vim-eunuch.git
+[submodule "vim/_vim/bundle/vim-surround"]
+	path = vim/_vim/bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
