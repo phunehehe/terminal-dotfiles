@@ -25,3 +25,6 @@ then
 fi
 
 export PS1="$extra_style\[$(tput bold)\]$magenta[\j] $white\A $host_color\u@\h $blue\W \$\[$(tput sgr0)\] "
+
+local_config="$HOME/.bashrc-local"
+test -f "$local_config" && . "$local_config"
