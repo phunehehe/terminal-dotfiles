@@ -1,41 +1,32 @@
 #!/bin/bash
-
 set -e
 
 
-stamp=terminal-dotfiles
-now=$(date +'%Y-%m-%d_%H-%M-%S')
 bin_dir="$(cd "$(dirname "$0")" && pwd)"
-
+"$bin_dir/util.sh"
 
 # Setup indie config files
 
 dotfiles=(
-_bashrc
-_gemrc
-_gitconfig
-_my.cnf
-_profile
-_psqlrc
-_screenrc
-_shrc
-_tmux.conf
-_zshrc
+    _bashrc
+    _gemrc
+    _gitconfig
+    _my.cnf
+    _profile
+    _psqlrc
+    _screenrc
+    _shrc
+    _tmux.conf
+    _zshrc
 )
 
-for dotfile in "${dotfiles[@]}"
-do
-    destination="$HOME/${dotfile/_/.}"
-    [[ -h "$destination" ]] && rm "$destination"
-    [[ -e "$destination" ]] && mv "$destination" "$destination.$stamp-$now"
-    ln -s "$bin_dir/$dotfile" "$destination"
-done
+copy_files "$dotfiles"
 
 
 # Setup modules
 
 modules=(
-vim
+    vim
 )
 
 for module in "${modules[@]}"
