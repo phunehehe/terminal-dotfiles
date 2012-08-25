@@ -25,3 +25,6 @@
 [submodule "vim/vim-pathogen"]
 	path = vim/vim-pathogen
 	url = git://github.com/tpope/vim-pathogen.git
+[submodule "vim/xoria256.vim"]
+	path = vim/xoria256.vim
+	url = git://github.com/vim-scripts/xoria256.vim.git
