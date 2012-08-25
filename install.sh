@@ -1,39 +1,16 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -e
 
-export curl='curl --insecure --location --silent --show-error'
+
+stamp=terminal-dotfiles
+now=$(date +'%Y-%m-%d_%H-%M-%S')
+bin_dir="$(cd "$(dirname "$0")" && pwd)"
 
 
-# Make backup(s) if nessesary then copy new config to $HOME
-function copy_file {
+# Setup indie config files
 
-    SOURCE="$1"
-    NAME="$(basename $SOURCE)"
-    TARGET="$HOME/${NAME/_/.}"
-
-    if [ -e "$TARGET" ]
-    then
-        BACKUP="$TARGET.bak"
-        if [ -e "$BACKUP" ]
-        then
-            COUNT=0
-            while [ -e "$BACKUP.$COUNT" ]; do let "COUNT += 1"; done
-            BACKUP="$BACKUP.$COUNT"
-        fi
-        mv "$TARGET" "$BACKUP"
-        echo "Backup file $BACKUP created."
-    fi
-
-    echo "Creating config file $TARGET."
-    mv "$SOURCE" "$TARGET"
-}
-
-
-CWD="$(dirname $0)"
-
-
-DOTFILES=(
+dotfiles=(
 _bashrc
 _gemrc
 _gitconfig
@@ -45,20 +22,23 @@ _shrc
 _tmux.conf
 _zshrc
 )
-for DOTFILE in "${DOTFILES[@]}"
+
+for dotfile in "${dotfiles[@]}"
 do
-    $curl > "$CWD/$DOTFILE" \
-         https://github.com/phunehehe/terminal-dotfiles/raw/master/"$DOTFILE"
-    copy_file "$DOTFILE"
+    destination="$HOME/${dotfile/_/.}"
+    [[ -h "$destination" ]] && rm "$destination"
+    [[ -e "$destination" ]] && mv "$destination" "$destination.$stamp-$now"
+    ln -s "$bin_dir/$dotfile" "$destination"
 done
 
 
 # Setup modules
-MODULES=(
+
+modules=(
 vim
 )
-for MODULE in "${MODULES[@]}"
+
+for module in "${modules[@]}"
 do
-    mkdir -p "$MODULE"
-    $curl https://github.com/phunehehe/terminal-dotfiles/raw/master/"$MODULES"/install.sh | bash -s
+    "$bin_dir/$module/install.sh"
 done
