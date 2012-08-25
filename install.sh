@@ -3,7 +3,7 @@ set -e
 
 
 bin_dir="$(cd "$(dirname "$0")" && pwd)"
-"$bin_dir/util.sh"
+. "$bin_dir/util.sh"
 
 # Setup indie config files
 
