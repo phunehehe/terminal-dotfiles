@@ -33,4 +33,4 @@ purge() {
 }
 
 local_config="$HOME/.shrc-local"
-[[ -f "$local_config" ]] && . "$local_config"
+test -f "$local_config" && . "$local_config"
