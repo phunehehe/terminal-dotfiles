@@ -7,7 +7,7 @@ bin_dir="$(cd "$(dirname "$0")" && pwd)"
 
 # Setup indie config files
 
-dotfiles=(
+dotfiles="
     _bashrc
     _gemrc
     _gitconfig
@@ -18,7 +18,7 @@ dotfiles=(
     _shrc
     _tmux.conf
     _zshrc
-)
+"
 
 copy_files "$dotfiles"
 
