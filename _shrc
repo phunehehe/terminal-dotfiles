@@ -23,7 +23,13 @@ for extra in $(echo $path_extras)
 done
 
 my_cd() {
-    "cd" "$@" && ls
+    le_path="$1"
+    if test -f "$le_path"
+    then
+        le_path="$(dirname "$le_path")"
+        echo "$le_path"
+    fi
+    "cd" "$le_path" && ls
 }
 
 purge() {
