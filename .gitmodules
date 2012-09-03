@@ -28,3 +28,15 @@
 [submodule "vim/xoria256.vim"]
 	path = vim/xoria256.vim
 	url = git://github.com/vim-scripts/xoria256.vim.git
+[submodule "vim/_vim/bundle/vim-snipmate"]
+	path = vim/_vim/bundle/vim-snipmate
+	url = git://github.com/garbas/vim-snipmate.git
+[submodule "vim/_vim/bundle/tlib_vim"]
+	path = vim/_vim/bundle/tlib_vim
+	url = git://github.com/tomtom/tlib_vim.git
+[submodule "vim/_vim/bundle/vim-addon-mw-utils"]
+	path = vim/_vim/bundle/vim-addon-mw-utils
+	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "vim/_vim/bundle/snipmate-snippets"]
+	path = vim/_vim/bundle/snipmate-snippets
+	url = git://github.com/honza/snipmate-snippets.git
