@@ -40,3 +40,6 @@
 [submodule "vim/_vim/bundle/snipmate-snippets"]
 	path = vim/_vim/bundle/snipmate-snippets
 	url = git://github.com/honza/snipmate-snippets.git
+[submodule "vim/wombat256.vim"]
+	path = vim/wombat256.vim
+	url = git://github.com/vim-scripts/wombat256.vim.git
