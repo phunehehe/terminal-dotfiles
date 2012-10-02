@@ -39,6 +39,9 @@ endfunction
 
 "" Functional options
 
+" Useful for overriding file type
+set modeline
+
 " Unicode FTW
 set fileencodings=utf8
 
