@@ -4,5 +4,5 @@ altscreen on
 hardstatus alwayslastline
 hardstatus string '%-w%n%f%t%+w%-=%H|%c'
 
-termcapinfo xterm|xterms|xs|rxvt ti@:te@
+termcapinfo * ti@:te@
 term screen-256color
