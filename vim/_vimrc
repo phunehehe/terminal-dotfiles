@@ -147,6 +147,9 @@ set grepprg=grep\ -HIn\ $*\ /dev/null
 
 "" Key mappings
 
+" Format JSON
+nnoremap <Leader>j :%!python -m json.tool<cr>
+
 " Forgot to sudo when opening a file
 cnoremap w!! %!sudo tee > /dev/null %
 
