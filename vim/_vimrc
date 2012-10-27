@@ -191,3 +191,6 @@ nnoremap <leader>c :call ToggleCopy()<cr>
 
 " Smart tab completion
 inoremap <tab> <c-r>=CompleteOrTab()<cr>
+
+" Smart matching
+runtime macros/matchit.vim
