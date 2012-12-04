@@ -43,3 +43,9 @@
 [submodule "vim/wombat256.vim"]
 	path = vim/wombat256.vim
 	url = git://github.com/vim-scripts/wombat256.vim.git
+[submodule "vim/_vim/bundle/po.vim"]
+	path = vim/_vim/bundle/po.vim
+	url = git://github.com/vim-scripts/po.vim.git
+[submodule "vim/_vim/bundle/vim-repeat"]
+	path = vim/_vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git

@@ -6,7 +6,6 @@
 [diff]
     tool = vimdiff
 [core]
-    filemode = false
     autocrlf = false
     excludesfile = ~/.gitignore
     pager = vim -c 'set nonumber buftype=nofile' -
