@@ -48,4 +48,4 @@
 	url = git://github.com/vim-scripts/po.vim.git
 [submodule "vim/_vim/bundle/vim-repeat"]
 	path = vim/_vim/bundle/vim-repeat
-	url = https://github.com/tpope/vim-repeat.git
+	url = git://github.com/tpope/vim-repeat.git
