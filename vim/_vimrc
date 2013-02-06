@@ -81,7 +81,7 @@ au InsertLeave * set nopaste
 set mouse=a
 
 " Keep cursor in the middle of screen
-set scrolloff=99
+set scrolloff=9
 
 " Use + to copy to clipboard
 let g:clipbrdDefaultReg = '+'
