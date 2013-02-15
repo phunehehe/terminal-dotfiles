@@ -49,3 +49,6 @@
 [submodule "vim/_vim/bundle/vim-repeat"]
 	path = vim/_vim/bundle/vim-repeat
 	url = git://github.com/tpope/vim-repeat.git
+[submodule "vim/_vim/bundle/acp"]
+	path = vim/_vim/bundle/acp
+	url = git://github.com/eikenberry/acp.git
