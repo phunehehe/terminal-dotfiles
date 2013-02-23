@@ -52,3 +52,6 @@
 [submodule "vim/_vim/bundle/acp"]
 	path = vim/_vim/bundle/acp
 	url = git://github.com/eikenberry/acp.git
+[submodule "vim/_vim/bundle/vim-powerline"]
+	path = vim/_vim/bundle/vim-powerline
+	url = git://github.com/Lokaltog/vim-powerline.git
