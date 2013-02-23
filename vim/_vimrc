@@ -1,7 +1,6 @@
 " First thing first: pathogen to load everything
 call pathogen#infect()
 
-
 " Utility functions
 
 function! DoAndComeBack(command)
@@ -191,6 +190,9 @@ nnoremap <leader>c :call ToggleCopy()<cr>
 
 " Smart tab completion
 inoremap <tab> <c-r>=CompleteOrTab()<cr>
+
+" Select pasted text
+nnoremap gp `[v`]
 
 " Smart matching
 runtime macros/matchit.vim
