@@ -13,6 +13,7 @@ alias less='less -R'
 alias locate='locate --basename --existing'
 alias ls='ls -AFh --color=auto'
 alias screen='screen -DR'
+alias sudo='sudo '
 alias tmux='tmux attach'
 alias vi=vim
 alias view=vim
