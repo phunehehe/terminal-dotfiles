@@ -7,14 +7,15 @@ export EDITOR=vim
 export VISUAL=vim
 export PAGER=less
 
+alias cd='my_cd'
+alias grep='grep --binary-files=without-match --color'
+alias less='less -R'
+alias locate='locate --basename --existing'
+alias ls='ls -AFh --color=auto'
+alias screen='screen -DR'
+alias tmux='tmux attach'
 alias vi=vim
 alias view=vim
-alias ls='ls -AFh --color=auto'
-alias grep='grep --binary-files=without-match --color'
-alias locate='locate --basename --existing'
-alias tmux="tmux attach"
-alias screen="screen -DR"
-alias cd="my_cd"
 
 path_extras="/sbin /usr/sbin /usr/local/sbin $HOME/bin"
 for extra in $(echo $path_extras)
