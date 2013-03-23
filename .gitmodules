@@ -1,57 +1,57 @@
-[submodule "vim/_vim/bundle/nerdtree"]
-	path = vim/_vim/bundle/nerdtree
+[submodule "_vim/bundle/nerdtree"]
+	path = _vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "vim/_vim/bundle/ctrlp.vim"]
-	path = vim/_vim/bundle/ctrlp.vim
+[submodule "_vim/bundle/ctrlp.vim"]
+	path = _vim/bundle/ctrlp.vim
 	url = git://github.com/kien/ctrlp.vim.git
-[submodule "vim/_vim/bundle/vim-easymotion"]
-	path = vim/_vim/bundle/vim-easymotion
+[submodule "_vim/bundle/vim-easymotion"]
+	path = _vim/bundle/vim-easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
-[submodule "vim/_vim/bundle/vim-javascript"]
-	path = vim/_vim/bundle/vim-javascript
+[submodule "_vim/bundle/vim-javascript"]
+	path = _vim/bundle/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
-[submodule "vim/_vim/bundle/vim-coffee-script"]
-	path = vim/_vim/bundle/vim-coffee-script
+[submodule "_vim/bundle/vim-coffee-script"]
+	path = _vim/bundle/vim-coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
-[submodule "vim/_vim/bundle/vim-fugitive"]
-	path = vim/_vim/bundle/vim-fugitive
+[submodule "_vim/bundle/vim-fugitive"]
+	path = _vim/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "vim/_vim/bundle/vim-eunuch"]
-	path = vim/_vim/bundle/vim-eunuch
+[submodule "_vim/bundle/vim-eunuch"]
+	path = _vim/bundle/vim-eunuch
 	url = git://github.com/tpope/vim-eunuch.git
-[submodule "vim/_vim/bundle/vim-surround"]
-	path = vim/_vim/bundle/vim-surround
+[submodule "_vim/bundle/vim-surround"]
+	path = _vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
 [submodule "vim/vim-pathogen"]
-	path = vim/vim-pathogen
+	path = _vim/vim-pathogen
 	url = git://github.com/tpope/vim-pathogen.git
 [submodule "vim/xoria256.vim"]
-	path = vim/xoria256.vim
+	path = _vim/xoria256.vim
 	url = git://github.com/vim-scripts/xoria256.vim.git
-[submodule "vim/_vim/bundle/vim-snipmate"]
-	path = vim/_vim/bundle/vim-snipmate
+[submodule "_vim/bundle/vim-snipmate"]
+	path = _vim/bundle/vim-snipmate
 	url = git://github.com/garbas/vim-snipmate.git
-[submodule "vim/_vim/bundle/tlib_vim"]
-	path = vim/_vim/bundle/tlib_vim
+[submodule "_vim/bundle/tlib_vim"]
+	path = _vim/bundle/tlib_vim
 	url = git://github.com/tomtom/tlib_vim.git
-[submodule "vim/_vim/bundle/vim-addon-mw-utils"]
-	path = vim/_vim/bundle/vim-addon-mw-utils
+[submodule "_vim/bundle/vim-addon-mw-utils"]
+	path = _vim/bundle/vim-addon-mw-utils
 	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "vim/_vim/bundle/snipmate-snippets"]
-	path = vim/_vim/bundle/snipmate-snippets
+[submodule "_vim/bundle/snipmate-snippets"]
+	path = _vim/bundle/snipmate-snippets
 	url = git://github.com/honza/snipmate-snippets.git
 [submodule "vim/wombat256.vim"]
-	path = vim/wombat256.vim
+	path = _vim/wombat256.vim
 	url = git://github.com/vim-scripts/wombat256.vim.git
-[submodule "vim/_vim/bundle/po.vim"]
-	path = vim/_vim/bundle/po.vim
+[submodule "_vim/bundle/po.vim"]
+	path = _vim/bundle/po.vim
 	url = git://github.com/vim-scripts/po.vim.git
-[submodule "vim/_vim/bundle/vim-repeat"]
-	path = vim/_vim/bundle/vim-repeat
+[submodule "_vim/bundle/vim-repeat"]
+	path = _vim/bundle/vim-repeat
 	url = git://github.com/tpope/vim-repeat.git
-[submodule "vim/_vim/bundle/acp"]
-	path = vim/_vim/bundle/acp
+[submodule "_vim/bundle/acp"]
+	path = _vim/bundle/acp
 	url = git://github.com/eikenberry/acp.git
-[submodule "vim/_vim/bundle/vim-powerline"]
-	path = vim/_vim/bundle/vim-powerline
+[submodule "_vim/bundle/vim-powerline"]
+	path = _vim/bundle/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git

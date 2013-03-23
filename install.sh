@@ -19,18 +19,8 @@ dotfiles="
     _shrc
     _tmux.conf
     _zshrc
+    _vim
+    _vimrc
 "
 
 copy_files "$dotfiles"
-
-
-# Setup modules
-
-modules=(
-    vim
-)
-
-for module in "${modules[@]}"
-do
-    "$bin_dir/$module/install.sh"
-done
