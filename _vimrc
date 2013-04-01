@@ -72,6 +72,8 @@ autocmd BufWrite * if ! &bin | call DoAndComeBack("%s/\\s\\+$//e") | endif
 autocmd BufNewFile,BufRead *.mak  set filetype=html
 " JSON syntax highlighting for free
 autocmd BufNewFile,BufRead *.json set filetype=javascript
+" I don't know what modular2 is
+autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 " Automatically disable paste mode
 au InsertLeave * set nopaste
