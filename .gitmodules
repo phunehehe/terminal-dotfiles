@@ -26,10 +26,10 @@
 	path = _vim/vim-pathogen
 	url = git://github.com/tpope/vim-pathogen.git
 [submodule "vim/xoria256.vim"]
-	path = _vim/xoria256.vim
+	path = _vim/bundle/xoria256.vim
 	url = git://github.com/vim-scripts/xoria256.vim.git
 [submodule "vim/wombat256.vim"]
-	path = _vim/wombat256.vim
+	path = _vim/bundle/wombat256.vim
 	url = git://github.com/vim-scripts/wombat256.vim.git
 [submodule "_vim/bundle/po.vim"]
 	path = _vim/bundle/po.vim
