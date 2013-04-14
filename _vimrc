@@ -134,7 +134,7 @@ autocmd ColorScheme * highlight NonText ctermbg=None
 set cursorline
 
 " My favorite color scheme, for now
-colorscheme wombat256mod
+colorscheme kolor
 
 " Highlight search results
 set hlsearch

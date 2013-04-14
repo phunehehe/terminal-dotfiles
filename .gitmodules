@@ -46,3 +46,6 @@
 [submodule "_vim/bundle/undotree"]
 	path = _vim/bundle/undotree
 	url = git://github.com/mbbill/undotree.git
+[submodule "_vim/bundle/vim-kolor"]
+	path = _vim/bundle/vim-kolor
+	url = git://github.com/zeis/vim-kolor.git
