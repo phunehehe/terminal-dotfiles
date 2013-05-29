@@ -28,6 +28,8 @@ then
 fi
 
 export PS1="$extra_style%B%F{magenta}[%j] %F{white}%D{%H:%M} $host_color%n@%m %F{blue}%1~ %#%f%b%s "
+# TODO: configure this and get rid of PS1
+. ~/terminal-dotfiles/powerline/powerline/bindings/zsh/powerline.zsh
 
 autoload -U compinit
 compinit

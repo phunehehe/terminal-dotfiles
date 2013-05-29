@@ -40,9 +40,6 @@
 [submodule "_vim/bundle/acp"]
 	path = _vim/bundle/acp
 	url = git://github.com/eikenberry/acp.git
-[submodule "_vim/bundle/vim-powerline"]
-	path = _vim/bundle/vim-powerline
-	url = git://github.com/Lokaltog/vim-powerline.git
 [submodule "_vim/bundle/undotree"]
 	path = _vim/bundle/undotree
 	url = git://github.com/mbbill/undotree.git
@@ -51,4 +48,4 @@
 	url = git://github.com/zeis/vim-kolor.git
 [submodule "powerline"]
 	path = powerline
-	url = git://github.com/Lokaltog/powerline.git
+	url = git://github.com/phunehehe/powerline.git
