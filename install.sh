@@ -24,3 +24,8 @@ dotfiles="
 "
 
 copy_files "$dotfiles"
+
+mkdir -p ~/.fonts
+ln -s powerline/font/PowerlineSymbols.otf ~/.fonts/
+mkdir -p ~/.fonts.conf.d
+ln -s powerline/font/10-powerline-symbols.conf ~/.fonts.conf.d
