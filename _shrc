@@ -14,7 +14,7 @@ alias locate='locate --basename --existing'
 alias ls='ls -AFh --color=auto'
 alias screen='screen -DR'
 alias sudo='sudo '
-alias tmux='tmux attach'
+alias tm='tmux attach || tmux new'
 alias vi=vim
 alias view=vim
 
