@@ -1,15 +1,33 @@
 #!/bin/bash
+
 set -e
 
 
-bin_dir="$(cd "$(dirname "$0")" && pwd)"
-. "$bin_dir/util.sh"
+link_file() {
 
-# Setup indie config files
+    source="$1"
+    destination="$2"
+
+    dest_dir="$(dirname "$destination")"
+    mkdir -p "$dest_dir"
+
+    stamp=terminal-dotfiles
+    now=$(date +'%Y-%m-%d_%H-%M-%S')
+
+    [[ -h "$destination" ]] && rm "$destination"
+    [[ -e "$destination" ]] && mv "$destination" "$destination.$stamp-$now"
+    ln -sv "$source" "$destination"
+}
+
+
+bin_dir="$(cd "$(dirname "$0")" && pwd)"
+
 
 dotfiles="
     _bashrc
     _dir_colors
+    _fonts
+    _fonts.conf.d
     _gemrc
     _gitconfig
     _my.cnf
@@ -18,14 +36,13 @@ dotfiles="
     _screenrc
     _shrc
     _tmux.conf
-    _zshrc
     _vim
     _vimrc
+    _zshrc
 "
 
-copy_files "$dotfiles"
-
-mkdir -p ~/.fonts
-ln -s powerline/font/PowerlineSymbols.otf ~/.fonts/
-mkdir -p ~/.fonts.conf.d
-ln -s powerline/font/10-powerline-symbols.conf ~/.fonts.conf.d
+for source in $dotfiles
+do
+    destination="$HOME/${source/_/.}"
+    link_file "$bin_dir/$source" "$destination"
+done
