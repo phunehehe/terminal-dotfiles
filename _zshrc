@@ -42,9 +42,7 @@ bindkey "[4~"   end-of-line
 bindkey "[F"    end-of-line
 bindkey "OF"    end-of-line
 bindkey "[1;5C" forward-word
-bindkey "OC"    forward-word
 bindkey "[1;5D" backward-word
-bindkey "OD"    backward-word
 
 local_config="$HOME/.zshrc-local"
 test -f "$local_config" && . "$local_config"
