@@ -8,30 +8,33 @@ my_config = {
     'common': {
         #'term_truecolor': True,
         #'additional_escapes': 'tmux',
-    }
+    },
+    "ext": {
+        "shell": {
+            "theme": "default_leftonly",
+        },
+    },
 }
 
 my_theme_shell_default = {
-    'segments': {
-        'left': [
-            { 'name': 'hostname' },
-            { 'name': 'user' },
-            { 'name': 'virtualenv' },
+    "segments": {
+        "left": [
+            { "name": "hostname" },
+            { "name": "user" },
+            { "name": "virtualenv" },
+            { "name": "branch" },
             {
-                'name': 'cwd',
-                'args': { 'dir_limit_depth': 3 },
-            },
-        ],
-        'right': [
-            {
-                'module': 'powerline.segments.shell',
-                'name': 'last_pipe_status',
+                "name": "cwd",
+                "args": { "dir_limit_depth": 3 },
             },
             {
                 'module': 'powerline.segments.shell',
                 'name': 'jobs',
             },
-            { 'name': 'branch' },
+            {
+                "name": "last_status",
+                "module": "powerline.segments.shell",
+            },
         ]
     }
 }
@@ -55,9 +58,9 @@ with open('%s/_config/powerline/config.json' % this_dir, 'w') as config_file:
     json.dump(config, config_file, indent=4, sort_keys=True)
 
 
-with open('%s/powerline/powerline/config_files/themes/shell/default.json' % this_dir) as default_file:
+with open('%s/powerline/powerline/config_files/themes/shell/default_leftonly.json' % this_dir) as default_file:
     config = json.load(default_file)
 
 merge(config, my_theme_shell_default)
-with open('%s/_config/powerline/themes/shell/default.json' % this_dir, 'w') as config_file:
+with open('%s/_config/powerline/themes/shell/default_leftonly.json' % this_dir, 'w') as config_file:
     json.dump(config, config_file, indent=4, sort_keys=True)

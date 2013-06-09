@@ -26,7 +26,7 @@ bin_dir="$(cd "$(dirname "$0")" && pwd)"
 dotfiles="
     _bashrc
     _config/powerline/config.json
-    _config/powerline/themes/shell/default.json
+    _config/powerline/themes/shell/default_leftonly.json
     _dir_colors
     _fonts
     _fonts.conf.d
