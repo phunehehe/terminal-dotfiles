@@ -63,29 +63,36 @@ my_shell_colorscheme = {
 this_dir = os.path.dirname(os.path.abspath(__file__))
 
 
-def merge(base_dict, extra_dict):
+def merge_dict(base_dict, extra_dict):
     for key, extra_value in extra_dict.iteritems():
         if key in base_dict and isinstance(extra_value, dict):
-            merge(base_dict[key], extra_value)
+            merge_dict(base_dict[key], extra_value)
         else:
             base_dict[key] = extra_value
 
 
-with open('%s/powerline/powerline/config_files/config.json' % this_dir) as default_file:
-    config = json.load(default_file)
-merge(config, my_config)
-with open('%s/_config/powerline/config.json' % this_dir, 'w') as config_file:
-    json.dump(config, config_file, indent=4, sort_keys=True)
+def merge_config(in_file_name, extra_config, out_file_name):
+    with open(in_file_name) as in_file:
+        config = json.load(in_file)
+    merge_dict(config, extra_config)
+    with open(out_file_name, 'w') as out_file:
+        json.dump(config, out_file, indent=4, sort_keys=True)
 
 
-with open('%s/powerline/powerline/config_files/themes/shell/default_leftonly.json' % this_dir) as default_file:
-    config = json.load(default_file)
-merge(config, my_shell_theme)
-with open('%s/_config/powerline/themes/shell/default_leftonly.json' % this_dir, 'w') as config_file:
-    json.dump(config, config_file, indent=4, sort_keys=True)
+merge_config(
+    '%s/powerline/powerline/config_files/config.json' % this_dir,
+    my_config,
+    '%s/_config/powerline/config.json' % this_dir,
+)
 
-with open('%s/powerline/powerline/config_files/colorschemes/shell/default.json' % this_dir) as default_file:
-    config = json.load(default_file)
-merge(config, my_shell_colorscheme)
-with open('%s/_config/powerline/colorschemes/shell/default.json' % this_dir, 'w') as config_file:
-    json.dump(config, config_file, indent=4, sort_keys=True)
+merge_config(
+    '%s/powerline/powerline/config_files/themes/shell/default_leftonly.json' % this_dir,
+    my_shell_theme,
+    '%s/_config/powerline/themes/shell/default_leftonly.json' % this_dir,
+)
+
+merge_config(
+    '%s/powerline/powerline/config_files/colorschemes/shell/default.json' % this_dir,
+    my_shell_colorscheme,
+    '%s/_config/powerline/colorschemes/shell/default.json' % this_dir,
+)
