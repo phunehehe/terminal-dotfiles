@@ -20,23 +20,23 @@ my_shell_theme = {
     "segments": {
         "left": [
             {
+                'module': 'powerline.segments.shell',
+                'name': 'jobs',
+            },
+            {
                 "name": "date",
                 "args": {
                     "istime": True,
                     "format": "%H:%M:%S",
                 },
             },
-            { "name": "hostname" },
             { "name": "user" },
+            { "name": "hostname" },
             { "name": "virtualenv" },
             { "name": "branch" },
             {
                 "name": "cwd",
                 "args": { "dir_limit_depth": 3 },
-            },
-            {
-                'module': 'powerline.segments.shell',
-                'name': 'jobs',
             },
             {
                 "name": "last_status",
