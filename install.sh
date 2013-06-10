@@ -28,6 +28,7 @@ dotfiles="
     _config/powerline/colorschemes/shell/default.json
     _config/powerline/config.json
     _config/powerline/themes/shell/default_leftonly.json
+    _config/powerline/themes/tmux/default.json
     _dir_colors
     _fonts
     _fonts.conf.d

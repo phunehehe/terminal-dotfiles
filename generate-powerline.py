@@ -60,6 +60,13 @@ my_shell_colorscheme = {
     }
 }
 
+my_tmux_theme = {
+    "segments": {
+        "right": [],
+    }
+}
+
+
 this_dir = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -95,4 +102,10 @@ merge_config(
     '%s/powerline/powerline/config_files/colorschemes/shell/default.json' % this_dir,
     my_shell_colorscheme,
     '%s/_config/powerline/colorschemes/shell/default.json' % this_dir,
+)
+
+merge_config(
+    '%s/powerline/powerline/config_files/themes/tmux/default.json' % this_dir,
+    my_tmux_theme,
+    '%s/_config/powerline/themes/tmux/default.json' % this_dir,
 )
