@@ -49,3 +49,6 @@ do
     destination="$HOME/${source/_/.}"
     link_file "$bin_dir/$source" "$destination"
 done
+
+
+"$bin_dir/generate-powerline.py"
