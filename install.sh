@@ -25,13 +25,13 @@ bin_dir="$(cd "$(dirname "$0")" && pwd)"
 
 dotfiles="
     _bashrc
+    _config/fontconfig/conf.d/10-powerline-symbols.conf
     _config/powerline/colorschemes/shell/default.json
     _config/powerline/config.json
     _config/powerline/themes/shell/default_leftonly.json
     _config/powerline/themes/tmux/default.json
     _dir_colors
     _fonts
-    _fonts.conf.d
     _gemrc
     _gitconfig
     _my.cnf
