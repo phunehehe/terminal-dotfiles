@@ -6,26 +6,7 @@ export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
 
-green="\[$(tput setaf 2)\]"
-yellow="\[$(tput setaf 3)\]"
-blue="\[$(tput setaf 4)\]"
-magenta="\[$(tput setaf 5)\]"
-white="\[$(tput setaf 7)\]"
-
-if test -n "$SSH_TTY" || test -n "$SUDO_USER"
-then
-    host_color=$yellow
-else
-    host_color=$green
-fi
-
-if test "$EUID" = 0
-then
-    extra_style="\[$(tput smso)\]\[$(tput setab 1)\]"
-fi
-
-export PS1="$extra_style\[$(tput bold)\]$magenta[\j] $white\A $host_color\u@\h $blue\W \$\[$(tput sgr0)\] "
-. ~/terminal-dotfiles/powerline/powerline/bindings/bash/powerline.sh
+PROMPT_COMMAND=my_prompt
 
 local_config="$HOME/.bashrc-local"
 test -f "$local_config" && . "$local_config"

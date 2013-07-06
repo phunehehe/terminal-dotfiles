@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+
 
 export TERM=xterm-256color
 export AR_DIR=~/.archive
@@ -6,6 +7,7 @@ export MANPAGER="vim -c '%s/_\|.\|\[[0-9]*m//e' -c 'set nonumber buftype=nofi
 export EDITOR=vim
 export VISUAL=vim
 export PAGER=less
+
 
 alias cd='my_cd'
 alias grep='grep --binary-files=without-match --color'
@@ -18,15 +20,56 @@ alias tm='tmux attach || tmux new'
 alias vi=vim
 alias view=vim
 
+
 path_extras="/sbin /usr/sbin /usr/local/sbin $HOME/bin"
 for extra in $(echo $path_extras)
     do
     test -d $extra && test ":$PATH:" != "*:$extra:*" && PATH="$extra:$PATH"
 done
 
+
+bold="$(tput bold)"
+
+if test "$EUID" = 0
+then
+    extra_style="\[$(tput smso)\]\[$(tput setab 1)\]"
+fi
+
+if test -n "$SSH_TTY" || test -n "$SUDO_USER"
+then
+    host_color=$yellow
+else
+    host_color="$(tput setaf 40)"
+fi
+
+my_prompt() {
+    previous_code=$?
+    pieces=()
+
+    number_of_jobs=$(jobs | wc -l)
+    (($number_of_jobs > 0)) && pieces+=("$(tput setaf 220)$number_of_jobs")
+
+    pieces+=("$(tput setaf 244)$(date +%H:%M:%S)")
+    pieces+=("$host_color$(whoami)@$(hostname)")
+
+    working_dir="$PWD"
+    slashes="${working_dir//[^\/]}"
+    for (( i=2; i<${#slashes}; i++ ))
+    do
+        working_dir="${working_dir#*/}"
+    done
+    pieces+=("$(tput setaf 39)$working_dir")
+
+    (($previous_code > 0)) && pieces+=("$(tput setaf 168)$previous_code")
+
+    PS1="$bold${pieces[@]}$(tput setaf 15) "
+}
+
+
 cd_ls() {
     "cd" "$@" && ls
 }
+
 
 my_cd() {
     le_path="$1"
@@ -40,11 +83,13 @@ my_cd() {
     cd_ls "$@"
 }
 
+
 purge() {
     target="${1:-.}"
     find "$target" -type f -mtime +7 -exec rm {} \;
     find "$target" -type d -empty -exec rmdir {} \;
 }
+
 
 local_config="$HOME/.shrc-local"
 test -f "$local_config" && . "$local_config"

@@ -15,21 +15,7 @@ setopt HIST_FCNTL_LOCK
 setopt HIST_LEX_WORDS
 setopt EXTENDED_GLOB
 
-if [[ -n $SSH_TTY || -n $SUDO_USER ]]
-then
-    host_color="%F{yellow}"
-else
-    host_color="%F{green}"
-fi
-
-if [[ $EUID == 0 ]]
-then
-    extra_style="%K{red}%S"
-fi
-
-export PS1="$extra_style%B%F{magenta}[%j] %F{white}%D{%H:%M} $host_color%n@%m %F{blue}%1~ %#%f%b%s "
-# TODO: configure this and get rid of PS1
-. ~/terminal-dotfiles/powerline/powerline/bindings/zsh/powerline.zsh
+precmd_functions=(my_prompt)
 
 autoload -U compinit
 compinit
