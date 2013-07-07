@@ -46,9 +46,6 @@
 [submodule "_vim/bundle/vim-kolor"]
 	path = _vim/bundle/vim-kolor
 	url = git://github.com/zeis/vim-kolor.git
-[submodule "powerline"]
-	path = powerline
-	url = git://github.com/phunehehe/powerline.git
 [submodule "zsh-syntax-highlighting"]
 	path = zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git

@@ -1,6 +1,5 @@
 " First thing first: pathogen to load everything
 call pathogen#infect()
-set runtimepath+=~/terminal-dotfiles/powerline/powerline/bindings/vim
 
 " Utility functions
 
