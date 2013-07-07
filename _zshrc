@@ -1,5 +1,12 @@
 #!/bin/zsh
 
+
+# This is needed in .shrc
+escape() {
+    echo "%{$1%}"
+}
+
+
 . ~/.shrc
 
 
@@ -13,10 +20,6 @@ setopt HIST_FCNTL_LOCK
 setopt HIST_LEX_WORDS
 setopt EXTENDED_GLOB
 
-
-escape() {
-    echo "%{$1%}"
-}
 
 precmd_functions=(my_prompt)
 

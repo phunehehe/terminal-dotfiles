@@ -1,5 +1,12 @@
 #!/bin/bash
 
+
+# This is needed in .shrc
+escape() {
+    echo "\[$1\]"
+}
+
+
 . ~/.shrc
 
 
@@ -7,10 +14,6 @@ export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
 
-
-escape() {
-    echo "\[$1\]"
-}
 
 PROMPT_COMMAND=my_prompt
 
