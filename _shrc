@@ -51,10 +51,13 @@ my_prompt() {
 
     working_dir="$PWD"
     slashes="${working_dir//[^\/]}"
-    for (( i=2; i<${#slashes}; i++ ))
-    do
-        working_dir="${working_dir#*/}"
-    done
+    if ((${#slashes} > 3))
+    then
+        for (( i=2; i<${#slashes}; i++ ))
+        do
+            working_dir="${working_dir#*/}"
+        done
+    fi
     pieces+=("$(escape $(tput setaf 39))$working_dir")
 
     (($previous_code > 0)) && pieces+=("$(escape $(tput setaf 168))$previous_code")
