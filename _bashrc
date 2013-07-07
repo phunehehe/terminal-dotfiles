@@ -2,11 +2,21 @@
 
 . ~/.shrc
 
+
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
 
+
+escape() {
+    echo "\[$1\]"
+}
+
 PROMPT_COMMAND=my_prompt
+
 
 local_config="$HOME/.bashrc-local"
 test -f "$local_config" && . "$local_config"
+
+
+true

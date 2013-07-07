@@ -2,8 +2,6 @@
 
 . ~/.shrc
 
-bindkey -e
-zstyle ':completion:*' use-cache on
 
 export HISTSIZE=10000
 export SAVEHIST=$HISTSIZE
@@ -15,11 +13,20 @@ setopt HIST_FCNTL_LOCK
 setopt HIST_LEX_WORDS
 setopt EXTENDED_GLOB
 
+
+escape() {
+    echo "%{$1%}"
+}
+
 precmd_functions=(my_prompt)
 
+
+zstyle ':completion:*' use-cache on
 autoload -U compinit
 compinit
 
+
+bindkey -e
 bindkey "[3~"   delete-char
 bindkey "OH"    beginning-of-line
 bindkey "[H"    beginning-of-line
@@ -30,8 +37,13 @@ bindkey "OF"    end-of-line
 bindkey "[1;5C" forward-word
 bindkey "[1;5D" backward-word
 
+
 local_config="$HOME/.zshrc-local"
 test -f "$local_config" && . "$local_config"
 
+
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 . ~/terminal-dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+true

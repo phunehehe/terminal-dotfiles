@@ -28,14 +28,13 @@ for extra in $(echo $path_extras)
 done
 
 
-bold="$(tput bold)"
-
 if test "$EUID" = 0
 then
     extra_style="\[$(tput smso)\]\[$(tput setab 1)\]"
 fi
 
-if test -n "$SSH_TTY" || test -n "$SUDO_USER"
+#if test -n "$SSH_TTY" || test -n "$SUDO_USER"
+if false
 then
     host_color=$yellow
 else
@@ -47,10 +46,10 @@ my_prompt() {
     pieces=()
 
     number_of_jobs=$(jobs | wc -l)
-    (($number_of_jobs > 0)) && pieces+=("$(tput setaf 220)$number_of_jobs")
+    (($number_of_jobs > 0)) && pieces+=("$(escape $(tput setaf 220))$number_of_jobs")
 
-    pieces+=("$(tput setaf 244)$(date +%H:%M:%S)")
-    pieces+=("$host_color$(whoami)@$(hostname)")
+    pieces+=("$(escape $(tput setaf 244))$(date +%H:%M:%S)")
+    pieces+=("$(escape $host_color)$(whoami)@$(hostname)")
 
     working_dir="$PWD"
     slashes="${working_dir//[^\/]}"
@@ -58,11 +57,11 @@ my_prompt() {
     do
         working_dir="${working_dir#*/}"
     done
-    pieces+=("$(tput setaf 39)$working_dir")
+    pieces+=("$(escape $(tput setaf 39))$working_dir")
 
-    (($previous_code > 0)) && pieces+=("$(tput setaf 168)$previous_code")
+    (($previous_code > 0)) && pieces+=("$(escape $(tput setaf 168))$previous_code")
 
-    PS1="$bold${pieces[@]}$(tput setaf 15) "
+    PS1="$(escape $(tput bold))${pieces[@]}$(escape $(tput setaf 15)) "
 }
 
 
@@ -93,3 +92,6 @@ purge() {
 
 local_config="$HOME/.shrc-local"
 test -f "$local_config" && . "$local_config"
+
+
+true
