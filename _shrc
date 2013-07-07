@@ -29,20 +29,20 @@ do
 done
 
 
-date_color="$(escape $(tput setaf 244))"
-cwd_color="$(escape $(tput setaf 39))"
-jobs_color="$(escape $(tput setaf 220))"
-code_color="$(escape $(tput setaf 160))"
+date_color="$(escape $(tput setaf 248))"
+cwd_color="$(escape $(tput setaf 38))"
+jobs_color="$(escape $(tput setaf 221))"
+code_color="$(escape $(tput setaf 203))"
 text_color="$(escape $(tput setaf 15))"
 
 if test "$EUID" = 0
 then
-    host_color="$(escape $(tput setaf 196))"
+    host_color="$(escape $(tput setaf 203))"
 elif test -n "$SSH_TTY" || test -n "$SUDO_USER"
 then
-    host_color="$(escape $(tput setaf 178))"
+    host_color="$(escape $(tput setaf 221))"
 else
-    host_color="$(escape $(tput setaf 40))"
+    host_color="$(escape $(tput setaf 47))"
 fi
 
 my_prompt() {
