@@ -31,8 +31,10 @@ done
 
 date_color="$(escape $(tput setaf 248))"
 cwd_color="$(escape $(tput setaf 38))"
-jobs_color="$(escape $(tput setaf 221))"
-code_color="$(escape $(tput setaf 203))"
+jobs_color="$(escape "$(tput setab 221)$(tput setaf 16)")"
+end_jobs_color="$(escape $(tput setab 0))"
+code_color="$(escape "$(tput setab 203)$(tput setaf 16)")"
+end_code_color="$(escape $(tput setab 0))"
 text_color="$(escape $(tput setaf 15))"
 bold="$(escape $(tput bold))"
 
@@ -66,9 +68,9 @@ my_prompt() {
     pieces+=("$cwd_color$working_dir")
 
     number_of_jobs=$(jobs | wc -l)
-    (($number_of_jobs > 0)) && pieces+=("$jobs_color$number_of_jobs")
+    (($number_of_jobs > 0)) && pieces+=("$jobs_color$number_of_jobs$end_jobs_color")
 
-    (($previous_code > 0)) && pieces+=("$code_color$previous_code")
+    (($previous_code > 0)) && pieces+=("$code_color$previous_code$end_code_color")
 
     PS1="$bold${pieces[@]}$text_color "
 }
