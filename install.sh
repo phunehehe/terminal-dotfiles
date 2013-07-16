@@ -26,7 +26,6 @@ bin_dir="$(cd "$(dirname "$0")" && pwd)"
 dotfiles="
     _bashrc
     _dir_colors
-    _fonts
     _gemrc
     _gitconfig
     _my.cnf
