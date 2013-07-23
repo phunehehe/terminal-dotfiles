@@ -13,4 +13,6 @@
     email = phunehehe@gmail.com
     name = Hoang Xuan Phu
 [alias]
-	graph = log --oneline --color --graph --decorate
+    graph = log --oneline --color --graph --decorate
+[push]
+    default = tracking
