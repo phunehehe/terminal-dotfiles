@@ -37,6 +37,7 @@ dotfiles="
     _vim
     _vimrc
     _zshrc
+    bin/bash-prompt
 "
 
 for source in $dotfiles

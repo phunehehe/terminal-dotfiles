@@ -1,0 +1,47 @@
+#!/bin/bash
+
+date_color="$(escape $(tput setaf 248))"
+cwd_color="$(escape $(tput setaf 38))"
+jobs_color="$(escape "$(tput setab 221)$(tput setaf 16)")"
+end_jobs_color="$(escape $(tput setab 0))"
+code_color="$(escape "$(tput setab 203)$(tput setaf 16)")"
+end_code_color="$(escape $(tput setab 0))"
+text_color="$(escape $(tput setaf 15))"
+bold="$(escape $(tput bold))"
+
+if test "$EUID" = 0
+then
+    host_color="$(escape $(tput setaf 203))"
+elif test -n "$SSH_TTY" || test -n "$SUDO_USER"
+then
+    host_color="$(escape $(tput setaf 221))"
+else
+    host_color="$(escape $(tput setaf 47))"
+fi
+host_piece="$host_color$(whoami)@$(hostname)"
+
+my_prompt() {
+    previous_code=$?
+    pieces=()
+
+    pieces+=("$date_color$(date +%H:%M:%S)")
+    pieces+=("$host_piece")
+
+    working_dir="$PWD"
+    slashes="${working_dir//[^\/]}"
+    if ((${#slashes} > 3))
+    then
+        for ((i=2; i<${#slashes}; i++))
+        do
+            working_dir="${working_dir#*/}"
+        done
+    fi
+    pieces+=("$cwd_color$working_dir")
+
+    number_of_jobs=$(jobs | wc -l)
+    (($number_of_jobs > 0)) && pieces+=("$jobs_color$number_of_jobs$end_jobs_color")
+
+    (($previous_code > 0)) && pieces+=("$code_color$previous_code$end_code_color")
+
+    PS1="$bold${pieces[@]}$text_color "
+}

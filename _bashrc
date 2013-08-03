@@ -1,12 +1,5 @@
 #!/bin/bash
 
-
-# This is needed in .shrc
-escape() {
-    echo "\[$1\]"
-}
-
-
 . ~/.shrc
 
 
@@ -15,11 +8,19 @@ export HISTSIZE=10000
 shopt -s histappend
 
 
+# This is needed for escaping in the prompt
+escape() {
+    echo "\[$1\]"
+}
+
+. ~/bin/bash-prompt
 PROMPT_COMMAND=my_prompt
 
 
+# Load local config if exists
 local_config="$HOME/.bashrc-local"
 test -f "$local_config" && . "$local_config"
 
 
+# Always return success
 true

@@ -1,12 +1,5 @@
 #!/bin/zsh
 
-
-# This is needed in .shrc
-escape() {
-    echo "%{$1%}"
-}
-
-
 . ~/.shrc
 
 
@@ -21,6 +14,12 @@ setopt HIST_LEX_WORDS
 setopt EXTENDED_GLOB
 
 
+# This is needed for escaping in the prompt
+escape() {
+    echo "%{$1%}"
+}
+
+. ~/bin/bash-prompt
 precmd_functions=(my_prompt)
 
 
@@ -41,6 +40,7 @@ bindkey "[1;5C" forward-word
 bindkey "[1;5D" backward-word
 
 
+# Load local config if exists
 local_config="$HOME/.zshrc-local"
 test -f "$local_config" && . "$local_config"
 
@@ -49,4 +49,5 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 . ~/terminal-dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
+# Always return success
 true
