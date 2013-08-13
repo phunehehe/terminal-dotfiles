@@ -52,3 +52,6 @@
 [submodule "_vim/bundle/vim-abolish"]
 	path = _vim/bundle/vim-abolish
 	url = git@github.com:tpope/vim-abolish.git
+[submodule "_vim/bundle/vim-unimpaired"]
+	path = _vim/bundle/vim-unimpaired
+	url = git@github.com:tpope/vim-unimpaired.git
