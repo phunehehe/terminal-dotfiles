@@ -16,9 +16,6 @@
 [submodule "_vim/bundle/vim-fugitive"]
 	path = _vim/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "_vim/bundle/vim-eunuch"]
-	path = _vim/bundle/vim-eunuch
-	url = git://github.com/tpope/vim-eunuch.git
 [submodule "_vim/bundle/vim-surround"]
 	path = _vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
