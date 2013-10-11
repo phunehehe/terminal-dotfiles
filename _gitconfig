@@ -5,6 +5,7 @@
     tool = vimdiff
 [diff]
     tool = vimdiff
+    renames = true
 [core]
     autocrlf = false
     excludesfile = ~/.gitignore
