@@ -1,6 +1,7 @@
 " First thing first: pathogen to load everything
 call pathogen#infect()
 
+
 " Utility functions
 
 function! DoAndComeBack(command)
@@ -33,6 +34,17 @@ function! CompleteOrTab()
     else
         return "\<c-n>"
     endif
+endfunction
+
+function! TwiddleCase(str)
+    if a:str ==# toupper(a:str)
+        let result = tolower(a:str)
+    elseif a:str ==# tolower(a:str)
+        let result = substitute(a:str,'\(\<\w\+\>\)', '\u\1', 'g')
+    else
+        let result = toupper(a:str)
+    endif
+    return result
 endfunction
 
 
@@ -145,6 +157,11 @@ let g:ctrlp_working_path_mode = 0
 " grep ignores binary files
 set grepprg=grep\ -HIn\ $*\ /dev/null
 
+" Options for vim-javascript
+let g:html_indent_inctags = "html,body,head"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
+
 
 "" Key mappings
 
@@ -199,7 +216,5 @@ nnoremap gp `[v`]
 " Smart matching
 runtime macros/matchit.vim
 
-" Options for vim-javascript
-let g:html_indent_inctags = "html,body,head"
-let g:html_indent_script1 = "inc"
-let g:html_indent_style1 = "inc"
+" Switch case
+vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgv
