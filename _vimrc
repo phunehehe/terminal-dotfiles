@@ -130,7 +130,6 @@ set showbreak=↪
 " Fold by indentation, fine for most programming languages
 set nofoldenable
 set foldmethod=indent
-set foldnestmax=1
 
 
 "" Display options
