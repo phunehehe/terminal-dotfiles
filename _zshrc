@@ -14,10 +14,11 @@ setopt HIST_LEX_WORDS
 setopt EXTENDED_GLOB
 
 
-# This is needed for escaping in the prompt
-escape() {
+prompt_escape() {
     echo "%{$1%}"
 }
+
+prompt_date='%D{%H:%M:%S}'
 
 . ~/bin/bash-prompt
 precmd_functions=(my_prompt)

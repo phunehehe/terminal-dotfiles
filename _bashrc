@@ -9,10 +9,11 @@ shopt -s histappend
 shopt -s globstar
 
 
-# This is needed for escaping in the prompt
-escape() {
+prompt_escape() {
     echo "\[$1\]"
 }
+
+prompt_date='\D{%H:%M:%S}'
 
 . ~/bin/bash-prompt
 PROMPT_COMMAND=my_prompt
