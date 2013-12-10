@@ -27,26 +27,24 @@ date_piece="$date_color$prompt_date"
 my_prompt() {
 
     previous_code=$?
-    pieces=()
 
-    pieces+=("$date_piece")
-    pieces+=("$host_piece")
+    pieces="$date_piece $host_piece"
 
     working_dir="$PWD"
     slashes="${working_dir//[^\/]}"
     if ((${#slashes} > 3))
     then
-        for ((i=2; i<${#slashes}; i++))
+        for i in $(seq 3 ${#slashes})
         do
             working_dir="${working_dir#*/}"
         done
     fi
-    pieces+=("$cwd_color$working_dir")
+    pieces="$pieces $cwd_color$working_dir"
 
     number_of_jobs=$(jobs | grep '^\[' | wc -l)
-    (($number_of_jobs > 0)) && pieces+=("$jobs_color$number_of_jobs$end_jobs_color")
+    (($number_of_jobs > 0)) && pieces="$pieces $jobs_color$number_of_jobs$end_jobs_color"
 
-    (($previous_code > 0)) && pieces+=("$code_color$previous_code$end_code_color")
+    (($previous_code > 0)) && pieces="$pieces $code_color$previous_code$end_code_color"
 
-    PS1="$bold${pieces[@]}$end_bold "
+    PS1="$bold$pieces$end_bold "
 }
