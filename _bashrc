@@ -1,7 +1,5 @@
 #!/bin/bash
 
-. ~/.shrc
-
 
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
@@ -12,10 +10,8 @@ shopt -s globstar
 prompt_escape() {
     echo "\[$1\]"
 }
-
 prompt_date='\D{%H:%M:%S}'
-
-. ~/bin/bash-prompt
+. ~/.shrc
 PROMPT_COMMAND=my_prompt
 
 

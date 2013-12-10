@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-. ~/.shrc
-
 
 export HISTSIZE=10000
 export SAVEHIST=$HISTSIZE
@@ -17,10 +15,8 @@ setopt EXTENDED_GLOB
 prompt_escape() {
     echo "%{$1%}"
 }
-
 prompt_date='%D{%H:%M:%S}'
-
-. ~/bin/bash-prompt
+. ~/.shrc
 precmd_functions=(my_prompt)
 
 

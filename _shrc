@@ -58,4 +58,58 @@ local_config="$HOME/.shrc-local"
 test -f "$local_config" && . "$local_config"
 
 
+
+# Le prompt
+
+
+date_color="$(prompt_escape $(tput setaf 248))"
+cwd_color="$(prompt_escape $(tput setaf 38))"
+jobs_color="$(prompt_escape "$(tput setab 221)$(tput setaf 16)")"
+end_jobs_color="$(prompt_escape $(tput setab 0))"
+code_color="$(prompt_escape "$(tput setab 203)$(tput setaf 16)")"
+end_code_color="$(prompt_escape $(tput setab 0))"
+bold="$(prompt_escape $(tput bold))"
+end_bold="$(prompt_escape $(tput sgr0))"
+
+
+if test "$EUID" = 0
+then
+    host_color="$(prompt_escape $(tput setaf 203))"
+elif test -n "$SSH_TTY" || test -n "$SUDO_USER"
+then
+    host_color="$(prompt_escape $(tput setaf 221))"
+else
+    host_color="$(prompt_escape $(tput setaf 47))"
+fi
+host_piece="$host_color$(whoami)@$(hostname)"
+
+date_piece="$date_color$prompt_date"
+
+
+my_prompt() {
+
+    previous_code=$?
+
+    pieces="$date_piece $host_piece"
+
+    working_dir="$PWD"
+    slashes="${working_dir//[^\/]}"
+    if ((${#slashes} > 3))
+    then
+        for i in $(seq 3 ${#slashes})
+        do
+            working_dir="${working_dir#*/}"
+        done
+    fi
+    pieces="$pieces $cwd_color$working_dir"
+
+    number_of_jobs=$(jobs | grep '^\[' | wc -l)
+    (($number_of_jobs > 0)) && pieces="$pieces $jobs_color$number_of_jobs$end_jobs_color"
+
+    (($previous_code > 0)) && pieces="$pieces $code_color$previous_code$end_code_color"
+
+    PS1="$bold$pieces$end_bold "
+}
+
+
 true
