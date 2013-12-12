@@ -11,6 +11,4 @@ Existing dotfiles will be backed up, just in case. To delete them in one fell sw
 
 To update an existing installation:
 
-    cd terminal-dotfiles
-    git submodule update --init --recursive
-    ./install.sh
+    ./terminal-dotfiles/update.sh
