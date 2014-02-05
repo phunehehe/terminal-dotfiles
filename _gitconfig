@@ -16,4 +16,4 @@
 [alias]
     graph = log --oneline --color --graph --decorate
 [push]
-    default = tracking
+    default = current
