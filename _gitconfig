@@ -17,3 +17,5 @@
     graph = log --oneline --color --graph --decorate
 [push]
     default = current
+[rerere]
+    enabled = true
