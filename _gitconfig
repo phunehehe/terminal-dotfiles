@@ -16,6 +16,6 @@
 [alias]
     graph = log --oneline --color --graph --decorate
 [push]
-    default = current
+    default = simple
 [rerere]
     enabled = true
