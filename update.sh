@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 bin_dir="$(cd "$(dirname "$0")" && pwd)"
 cd "$bin_dir"
