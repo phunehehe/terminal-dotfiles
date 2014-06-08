@@ -7,12 +7,6 @@
 [submodule "_vim/bundle/vim-easymotion"]
 	path = _vim/bundle/vim-easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
-[submodule "_vim/bundle/vim-javascript"]
-	path = _vim/bundle/vim-javascript
-	url = git://github.com/pangloss/vim-javascript.git
-[submodule "_vim/bundle/vim-coffee-script"]
-	path = _vim/bundle/vim-coffee-script
-	url = git://github.com/kchmck/vim-coffee-script.git
 [submodule "_vim/bundle/vim-fugitive"]
 	path = _vim/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
@@ -55,3 +49,6 @@
 [submodule "_vim/bundle/vim-unimpaired"]
 	path = _vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "_vim/bundle/vim-polyglot"]
+	path = _vim/bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
