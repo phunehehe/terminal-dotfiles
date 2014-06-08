@@ -40,9 +40,6 @@
 [submodule "zsh-syntax-highlighting"]
 	path = zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "_vim/bundle/vimux"]
-	path = _vim/bundle/vimux
-	url = git://github.com/benmills/vimux.git
 [submodule "_vim/bundle/vim-abolish"]
 	path = _vim/bundle/vim-abolish
 	url = https://github.com/tpope/vim-abolish.git
