@@ -17,6 +17,6 @@
     graph = log --oneline --color --graph --decorate
     sdiff = "!f() { git difftool $1~1 $1; }; f"
 [push]
-    default = simple
+    default = tracking
 [rerere]
     enabled = true
