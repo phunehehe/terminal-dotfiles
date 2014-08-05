@@ -49,3 +49,6 @@
 [submodule "_vim/bundle/vim-polyglot"]
 	path = _vim/bundle/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
+[submodule "dircolors-solarized"]
+	path = dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized.git

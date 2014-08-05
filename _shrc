@@ -112,4 +112,7 @@ my_prompt() {
 }
 
 
+eval $(dircolors ~/.dircolors)
+
+
 true
