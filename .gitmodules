@@ -52,3 +52,6 @@
 [submodule "dircolors-solarized"]
 	path = dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized.git
+[submodule "garbage-io"]
+	path = garbage-io
+	url = https://github.com/phunehehe/garbage-io.git
