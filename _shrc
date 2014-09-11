@@ -10,7 +10,7 @@ export PAGER=less
 
 
 alias cd='my_cd'
-alias grep='grep --binary-files=without-match --color'
+alias grep='grep --binary-files=without-match --devices=skip --color'
 alias less='less -R'
 alias locate='locate --basename --existing'
 alias ls='ls -AFh --color=auto'
