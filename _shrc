@@ -81,7 +81,7 @@ then
 else
     host_color="$(prompt_escape $(tput setaf 47))"
 fi
-host_piece="$host_color$(whoami)@$(hostname)"
+host_piece="$host_color$(whoami)@$(hostname --short)"
 
 date_piece="$date_color$prompt_date"
 
