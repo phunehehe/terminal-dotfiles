@@ -28,6 +28,7 @@ dotfiles="
     _dircolors
     _gemrc
     _gitconfig
+    _gitignore
     _my.cnf
     _profile
     _psqlrc
