@@ -4,5 +4,5 @@ set -e
 set -u
 
 git remote update
-git merge --ff-only
+git merge --ff-only @{upstream}
 git status
