@@ -20,8 +20,7 @@ alias vi=vim
 alias view=vim
 
 
-bin_dir="$(cd "$(dirname "$(readlink -f "$0")")" && pwd)"
-path_extras="/sbin /usr/sbin /usr/local/sbin $bin_dir/bin $HOME/.cabal/bin $HOME/bin"
+path_extras="/sbin /usr/sbin /usr/local/sbin /home/phunehehe/terminal-dotfiles/bin $HOME/.cabal/bin $HOME/bin"
 
 for extra in $(echo $path_extras)
 do
