@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+set -u
+
+git remote update
+git merge --ff-only
+git status
