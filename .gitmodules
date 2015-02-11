@@ -55,3 +55,6 @@
 [submodule "garbage-io"]
 	path = garbage-io
 	url = https://github.com/phunehehe/garbage-io.git
+[submodule "_vim/bundle/rainbow"]
+	path = _vim/bundle/rainbow
+	url = https://github.com/luochen1990/rainbow.git

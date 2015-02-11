@@ -161,6 +161,16 @@ let g:html_indent_inctags = "html,body,head"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
+" u got a fast terminal
+set ttyfast
+" to avoid scrolling problems
+set lazyredraw
+" Syntax coloring lines that are too long just slows down the world
+set synmaxcol=240
+
+" Rainbow parentheses!
+let g:rainbow_active = 1
+
 
 "" Key mappings
 
