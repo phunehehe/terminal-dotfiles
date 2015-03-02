@@ -16,15 +16,25 @@ function! DoAndComeBack(command)
     call cursor(l, c)
 endfunction
 
-function! ToggleCopy()
-    if (&number)
-        set nonumber
-        set nolist
-        set showbreak=
-    else
-        set number
+function! ShowFunnyCharacters(show)
+    if (a:show)
         set list
+        set number
+        "set relativenumber
         set showbreak=↪
+    else
+        set nolist
+        set nonumber
+        "set norelativenumber
+        set showbreak=
+    endif
+endfunction
+
+function! ToggleCopy()
+    if (&list)
+        :call ShowFunnyCharacters(0)
+    else
+        :call ShowFunnyCharacters(1)
     endif
 endfunction
 
@@ -74,8 +84,9 @@ set ignorecase
 " But allow for case sensitive when I seem to mean it
 set smartcase
 
-" Line numbers are good
-set number
+" Show funny characters!
+set listchars=tab:»\ ,trail:⋅,extends:❯,precedes:❮
+call ShowFunnyCharacters(1)
 
 " Remove any trailing whitespace that is in the file
 autocmd BufWrite * if ! &bin | call DoAndComeBack("%s/\\s\\+$//e") | endif
@@ -88,7 +99,10 @@ autocmd BufNewFile,BufRead *.json set filetype=javascript
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 " Automatically disable paste mode
-au InsertLeave * set nopaste
+autocmd InsertLeave * set nopaste
+
+"autocmd InsertEnter * set norelativenumber
+"autocmd InsertLeave * set relativenumber
 
 " Enable mouse support in console
 set mouse=a
@@ -121,11 +135,6 @@ set preserveindent
 
 " g as default flag for :substitute, make sense!
 set gdefault
-
-" Show funny characters!
-set list
-set listchars=tab:»\ ,trail:⋅,extends:❯,precedes:❮
-set showbreak=↪
 
 " Fold by indentation, fine for most programming languages
 set nofoldenable
@@ -227,3 +236,10 @@ runtime macros/matchit.vim
 
 " Switch case
 vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgv
+
+
+" Open file in previous buffer
+let g:netrw_browse_split = 4
+
+" Default to tree mode
+let g:netrw_liststyle=3

@@ -36,7 +36,6 @@ dotfiles="
     _shrc
     _tmux.conf
     _vim
-    _vimrc
     _zshrc
 "
 
