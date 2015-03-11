@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+for i in TERM INT QUIT
+do
+  kill -$i $@
+done
