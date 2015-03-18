@@ -58,3 +58,6 @@
 [submodule "_vim/bundle/rainbow"]
 	path = _vim/bundle/rainbow
 	url = https://github.com/luochen1990/rainbow.git
+[submodule "_vim/bundle/vim-dispatch"]
+	path = _vim/bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
