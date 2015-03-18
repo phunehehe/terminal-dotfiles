@@ -186,6 +186,9 @@ let g:rainbow_active = 1
 " Format JSON
 nnoremap <Leader>j :%!python -m json.tool<cr>
 
+" make
+nnoremap <Leader>m :Make<cr>
+
 " Forgot to sudo when opening a file
 cnoremap w!! %!sudo tee > /dev/null %
 
