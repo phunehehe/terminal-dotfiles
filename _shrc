@@ -18,6 +18,7 @@ alias sudo='sudo '
 alias tmux='"tmux" attach -d || "tmux" new'
 alias vi=vim
 alias view=vim
+alias rm='~/terminal-dotfiles/garbage-io/garbage-in'
 
 
 path_extras="/sbin /usr/sbin /usr/local/sbin /home/phunehehe/terminal-dotfiles/bin $HOME/.cabal/bin $HOME/bin"
