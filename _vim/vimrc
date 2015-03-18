@@ -183,11 +183,13 @@ let g:rainbow_active = 1
 
 "" Key mappings
 
-" Format JSON
-nnoremap <Leader>j :%!python -m json.tool<cr>
-
-" make
-nnoremap <Leader>m :Make<cr>
+nnoremap <leader>c :call ToggleCopy()<cr>
+nnoremap <leader>d :Gvdiff<cr>
+nnoremap <leader>h :nohlsearch<cr>
+nnoremap <leader>j :%!python -m json.tool<cr>
+nnoremap <leader>m :Make<cr>
+nnoremap <leader>n :NERDTreeFind<cr>
+nnoremap <leader>p :set paste!<cr>
 
 " Forgot to sudo when opening a file
 cnoremap w!! %!sudo tee > /dev/null %
@@ -211,22 +213,12 @@ nnoremap k gk
 
 " Search for files
 let g:ctrlp_map = '<leader>f'
-nnoremap <leader>n :NERDTreeFind<cr>
-
-" Temporarily disable search highlight
-nnoremap <leader>h :nohlsearch<cr>
 
 " * only highlight, not move
 nnoremap * :set hlsearch<cr>:let @/="\\<".expand("<cword>")."\\>"<cr>
 
-" Quick paste toggle
-nnoremap <leader>p :set paste!<cr>
-
 " Quick fold toggle
 nnoremap <space> za
-
-" For easy copying
-nnoremap <leader>c :call ToggleCopy()<cr>
 
 " Smart tab completion
 inoremap <tab> <c-r>=CompleteOrTab()<cr>
@@ -239,7 +231,6 @@ runtime macros/matchit.vim
 
 " Switch case
 vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgv
-
 
 " Open file in previous buffer
 let g:netrw_browse_split = 4
