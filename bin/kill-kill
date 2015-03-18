@@ -2,5 +2,5 @@
 
 for i in TERM INT QUIT
 do
-  kill -$i $@
+  kill -$i $@ || break
 done
