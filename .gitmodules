@@ -58,9 +58,9 @@
 [submodule "_vim/bundle/rainbow"]
 	path = _vim/bundle/rainbow
 	url = https://github.com/luochen1990/rainbow.git
-[submodule "_vim/bundle/vim-dispatch"]
-	path = _vim/bundle/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch.git
 [submodule "_vim/bundle/vim-nix"]
 	path = _vim/bundle/vim-nix
 	url = https://github.com/spwhitt/vim-nix.git
+[submodule "_vim/bundle/vimux"]
+	path = _vim/bundle/vimux
+	url = https://github.com/benmills/vimux.git

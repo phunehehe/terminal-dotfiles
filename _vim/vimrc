@@ -186,10 +186,14 @@ let g:rainbow_active = 1
 nnoremap <leader>c :call ToggleCopy()<cr>
 nnoremap <leader>d :Gvdiff<cr>
 nnoremap <leader>h :nohlsearch<cr>
-nnoremap <leader>j :%!python -m json.tool<cr>
-nnoremap <leader>m :Make<cr>
 nnoremap <leader>n :NERDTreeFind<cr>
 nnoremap <leader>p :set paste!<cr>
+
+" Format JSON
+nnoremap <leader>j :%!python -m json.tool<cr>
+
+nnoremap <leader>l :VimuxRunLastCommand<cr>
+nnoremap <leader>m :VimuxPromptCommand<cr>
 
 " Forgot to sudo when opening a file
 cnoremap w!! %!sudo tee > /dev/null %
