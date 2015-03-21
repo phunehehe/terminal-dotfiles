@@ -61,3 +61,6 @@
 [submodule "_vim/bundle/vim-dispatch"]
 	path = _vim/bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
+[submodule "_vim/bundle/vim-nix"]
+	path = _vim/bundle/vim-nix
+	url = https://github.com/spwhitt/vim-nix.git
