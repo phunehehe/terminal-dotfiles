@@ -9,16 +9,16 @@ export VISUAL=vim
 export PAGER=less
 
 
+#alias sudo='sudo '
+#alias vi=vim
+#alias view=vim
 alias grep='grep --binary-files=without-match --devices=skip --color'
-alias less='less -R'
+alias less='less --RAW-CONTROL-CHARS'
 alias locate='locate --basename --existing'
-alias ls='ls -AFh --color=auto'
-alias screen='screen -DR'
-alias sudo='sudo '
-alias tmux='tmux new-session -AD -s the-one'
-alias vi=vim
-alias view=vim
+alias ls='ls --almost-all --classify --human-readable --color=auto'
 alias rm='~/terminal-dotfiles/garbage-io/garbage-in'
+alias screen='screen -DR'
+alias tmux='tmux new-session -AD -s the-one'
 
 
 path_extras="/sbin /usr/sbin /usr/local/sbin /home/phunehehe/terminal-dotfiles/bin $HOME/.cabal/bin $HOME/bin"
