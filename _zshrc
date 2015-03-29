@@ -3,13 +3,17 @@
 
 export HISTSIZE=10000
 export SAVEHIST=$HISTSIZE
-export HISTFILE="$HOME/.history"
+
+# When the default shell is Bash, if Konsole is configured to
+# use Zsh, SHELL is set to Bash (???)
+export SHELL="$0"
+
+setopt EXTENDED_GLOB
+setopt HIST_FCNTL_LOCK
 setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_LEX_WORDS
 setopt HIST_REDUCE_BLANKS
 setopt SHARE_HISTORY
-setopt HIST_FCNTL_LOCK
-setopt HIST_LEX_WORDS
-setopt EXTENDED_GLOB
 
 
 prompt_escape() {
