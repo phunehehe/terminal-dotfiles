@@ -113,6 +113,9 @@ set scrolloff=9
 " Use + to copy to clipboard
 let g:clipbrdDefaultReg = '+'
 
+" Space is big and convenient
+let mapleader = " "
+
 " Spaces no tabs
 set expandtab
 set tabstop=4
@@ -189,11 +192,14 @@ nnoremap <leader>h :nohlsearch<cr>
 nnoremap <leader>n :NERDTreeFind<cr>
 nnoremap <leader>p :set paste!<cr>
 
+let g:ctrlp_cmd = 'CtrlPMixed'
+
 " Format JSON
 nnoremap <leader>j :%!python -m json.tool<cr>
 
 nnoremap <leader>l :VimuxRunLastCommand<cr>
 nnoremap <leader>m :VimuxPromptCommand<cr>
+nnoremap <leader>s :VimuxInterruptRunner<cr>
 
 " Forgot to sudo when opening a file
 cnoremap w!! %!sudo tee > /dev/null %
@@ -220,9 +226,6 @@ let g:ctrlp_map = '<leader>f'
 
 " * only highlight, not move
 nnoremap * :set hlsearch<cr>:let @/="\\<".expand("<cword>")."\\>"<cr>
-
-" Quick fold toggle
-nnoremap <space> za
 
 " Smart tab completion
 inoremap <tab> <c-r>=CompleteOrTab()<cr>
