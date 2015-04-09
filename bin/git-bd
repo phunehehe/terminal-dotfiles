@@ -1,0 +1,11 @@
+#!/bin/bash
+
+gitlog='git --no-pager log --oneline --graph --decorate --color'
+
+a=${1:-'HEAD'}
+b=${2:-'@{upstream}'}
+
+echo "Commits in $a:"
+$gitlog "$b".."$a"
+echo "Commits in $b:"
+$gitlog "$a".."$b"
