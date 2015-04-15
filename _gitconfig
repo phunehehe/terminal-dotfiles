@@ -14,7 +14,6 @@
     email = phuhimself@phunehehe.net
     name = Hoang Xuan Phu
 [alias]
-    graph = log --oneline --color --graph --decorate
     sdiff = "!f() { git difftool $1~1 $1; }; f"
 [push]
     default = tracking
