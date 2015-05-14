@@ -197,7 +197,7 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 " Format JSON
 nnoremap <leader>j :%!python -m json.tool<cr>
 
-nnoremap <leader>l :VimuxRunLastCommand<cr>
+nnoremap <leader>l :w \| :VimuxRunLastCommand<cr>
 nnoremap <leader>m :VimuxPromptCommand<cr>
 nnoremap <leader>s :VimuxInterruptRunner<cr>
 
@@ -205,7 +205,8 @@ nnoremap <leader>s :VimuxInterruptRunner<cr>
 cnoremap w!! %!sudo tee > /dev/null %
 
 " Remap jj to escape in insert mode.
-inoremap jj <esc>
+" Also save the file
+inoremap jj <esc>:w<cr>
 
 " Ctrl-jklm changes to that split
 nnoremap <c-j> <c-w>j
