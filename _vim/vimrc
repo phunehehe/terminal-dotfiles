@@ -20,13 +20,9 @@ function! ShowFunnyCharacters(show)
     if (a:show)
         set list
         set number
-        "set relativenumber
-        set showbreak=↪
     else
         set nolist
         set nonumber
-        "set norelativenumber
-        set showbreak=
     endif
 endfunction
 
@@ -142,6 +138,8 @@ set gdefault
 " Fold by indentation, fine for most programming languages
 set nofoldenable
 set foldmethod=indent
+
+set linebreak
 
 
 "" Display options
