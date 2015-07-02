@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -efux
+
+[[ -e package.yml ]] && hpack
+
+cabal2nix . > default.nix
+cabal2nix --shell . > shell.nix
+
+nix-shell --command 'cabal configure --enable-tests'
