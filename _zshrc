@@ -1,9 +1,11 @@
 #!/bin/zsh
 
-# my_prompt in .shrc needs prompt_escape
+# my_prompt in .shrc needs these stuff
 prompt_escape() {
     echo "%{$1%}"
 }
+prompt_date='%D{%H:%M:%S}'
+precmd_functions=(my_prompt)
 . ~/.shrc
 
 # When the default shell is Bash, if Konsole is configured to
@@ -19,9 +21,6 @@ setopt HIST_REDUCE_BLANKS
 setopt SHARE_HISTORY
 
 setopt EXTENDED_GLOB
-
-prompt_date='%D{%H:%M:%S}'
-precmd_functions=(my_prompt)
 
 zstyle ':completion:*' use-cache on
 autoload -U compinit
