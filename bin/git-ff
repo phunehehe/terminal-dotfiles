@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
-set -e
-set -u
+set -eufx
 
 git remote update
+
 git merge --ff-only @{upstream}
+git submodule update --init --recursive
+
 git status
