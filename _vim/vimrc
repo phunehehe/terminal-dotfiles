@@ -139,6 +139,10 @@ set gdefault
 set nofoldenable
 set foldmethod=indent
 
+" Because why not
+set autoread
+set autowriteall
+
 set linebreak
 
 
