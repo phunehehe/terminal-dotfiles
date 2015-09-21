@@ -24,7 +24,7 @@ alias screen='screen -DR'
 alias tmux='tmux attach || tmux new-session'
 
 
-path_extras="/sbin /usr/sbin /usr/local/sbin /home/phunehehe/terminal-dotfiles/bin $HOME/.cabal/bin $HOME/bin"
+path_extras="/sbin /usr/sbin /usr/local/sbin $HOME/terminal-dotfiles/bin $HOME/.cabal/bin $HOME/bin"
 
 for extra in $(echo $path_extras)
 do

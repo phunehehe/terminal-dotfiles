@@ -41,7 +41,7 @@ bindkey "[1;5D" backward-word
 local_config="$HOME/.zshrc-local"
 test -f "$local_config" && . "$local_config"
 
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern line)
 . ~/terminal-dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Always return success
