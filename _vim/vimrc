@@ -157,6 +157,7 @@ autocmd ColorScheme * highlight NonText ctermbg=None
 
 " Have a line indicate the cursor location
 set cursorline
+set cursorcolumn
 
 " My favorite color scheme, for now
 colorscheme kolor
