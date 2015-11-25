@@ -45,3 +45,5 @@ do
     destination="$HOME/${source/_/.}"
     link_file "$bin_dir/$source" "$destination"
 done
+
+link_file $bin_dir/_vim $HOME/.config/nvim

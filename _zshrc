@@ -12,6 +12,7 @@ precmd_functions=(my_prompt)
 # use Zsh, SHELL is set to Bash (???)
 export SHELL="$0"
 
+export HISTFILE=~/.zsh-history
 export HISTSIZE=10000
 export SAVEHIST=$HISTSIZE
 setopt HIST_FCNTL_LOCK
