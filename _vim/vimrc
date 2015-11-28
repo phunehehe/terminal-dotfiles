@@ -243,6 +243,9 @@ runtime macros/matchit.vim
 " Switch case
 vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgv
 
+" Line and column numbers in modeline
+set ruler
+
 " Open file in previous buffer
 let g:netrw_browse_split = 4
 
