@@ -5,6 +5,7 @@ cd "$bin_dir"
 
 git fetch
 git merge origin/master --ff-only
+git submodule sync
 git submodule update --init --recursive
 
 ./install.sh
