@@ -1,6 +1,8 @@
+#*#
 *.swo
 *.swp
 *~
+.#*
 .cabal-sandbox
 cabal.sandbox.config
 node_modules
