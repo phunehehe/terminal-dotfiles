@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gitlog='git --no-pager log --oneline --graph --decorate --color'
+gitlog='git --no-pager graph'
 
 a=${1:-'HEAD'}
 b=${2:-'@{upstream}'}

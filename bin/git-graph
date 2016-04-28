@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-git log --pretty='%C(auto)%h %ar %Cgreen%ae%C(auto)%d %C(white bold)%s' --color --graph "$@" \
-    | less --chop-long-lines --RAW-CONTROL-CHARS
+git -c core.pager='less --chop-long-lines' log \
+    --pretty='%C(auto)%h %ar %Cgreen%ae%C(auto)%d %C(white bold)%s' \
+    --color --graph "$@"
