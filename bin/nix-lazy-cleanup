@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
 set -efu
 
-count=$(
-    find /nix/store -maxdepth 1 \
-    | wc --lines)
-
-to_delete=($(
-    find /nix/store -maxdepth 1 \
-    | shuf \
-    | head --lines $(( count / 10 ))))
-
-nix-store \
+dead_paths=($(nix-store \
     --option gc-keep-outputs true \
     --option gc-keep-derivations false \
-    --delete "${to_delete[@]}"
+    --gc --print-dead))
+
+to_delete=()
+for i in "${dead_paths[@]}"
+do [[ $(shuf --input-range=1-10 --head-count=1) == 1 ]] && to_delete+=($i)
+done
+
+nix-store --delete "${to_delete[@]}"
