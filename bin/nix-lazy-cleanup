@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -efu
+
+count=$(
+    find /nix/store -maxdepth 1 \
+    | wc --lines)
+
+to_delete=($(
+    find /nix/store -maxdepth 1 \
+    | shuf \
+    | head --lines $(( count / 10 ))))
+
+nix-store \
+    --option gc-keep-outputs true \
+    --option gc-keep-derivations false \
+    --delete "${to_delete[@]}"
