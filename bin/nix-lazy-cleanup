@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -efu
 
+nix-env --delete-generations 10d
+
 dead_paths=($(nix-store \
     --option gc-keep-outputs true \
     --option gc-keep-derivations false \
