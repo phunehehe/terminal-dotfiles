@@ -3,7 +3,7 @@
 	url = git://github.com/scrooloose/nerdtree.git
 [submodule "_vim/bundle/ctrlp.vim"]
 	path = _vim/bundle/ctrlp.vim
-	url = git://github.com/kien/ctrlp.vim.git
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "_vim/bundle/vim-easymotion"]
 	path = _vim/bundle/vim-easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
