@@ -71,7 +71,7 @@ set ignorecase
 set smartcase
 
 " Show funny characters!
-set listchars=tab:»\ ,trail:⋅,extends:❯,precedes:❮
+set listchars=tab:»\ ,trail:⋅,extends:❯,precedes:❮,nbsp:⋅
 call ShowFunnyCharacters(1)
 
 " Remove any trailing whitespace that is in the file
@@ -95,6 +95,7 @@ set mouse=a
 
 " Keep cursor in the middle of screen
 set scrolloff=9
+set sidescrolloff=99
 
 " Use + to copy to clipboard
 let g:clipbrdDefaultReg = '+'
