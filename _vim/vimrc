@@ -34,14 +34,6 @@ function! ToggleCopy()
     endif
 endfunction
 
-function! CompleteOrTab()
-    if (strpart(getline('.'),col('.')-2,1)!~'\w')
-        return "\<tab>"
-    else
-        return "\<c-n>"
-    endif
-endfunction
-
 function! TwiddleCase(str)
     if a:str ==# toupper(a:str)
         let result = tolower(a:str)
@@ -53,8 +45,6 @@ function! TwiddleCase(str)
     return result
 endfunction
 
-
-"" Functional options
 
 " Useful for overriding file type
 set modeline
@@ -145,8 +135,21 @@ set autowriteall
 
 set linebreak
 
+" % matching for e.g. XML tags
+runtime macros/matchit.vim
 
-"" Display options
+
+" netrw stuff
+
+" Open file in previous buffer
+let g:netrw_browse_split = 4
+
+" Default to tree mode
+let g:netrw_liststyle=3
+
+
+" Line and column numbers in modeline
+set ruler
 
 " We should have as many colors as possible!
 set t_Co=256
@@ -164,9 +167,6 @@ colorscheme kolor
 
 " Highlight search results
 set hlsearch
-
-" ctrl.vim should use current directory
-let g:ctrlp_working_path_mode = 0
 
 " grep ignores binary files
 set grepprg=grep\ -HIn\ $*\ /dev/null
@@ -189,65 +189,43 @@ let g:rainbow_active = 1
 
 "" Key mappings
 
-nnoremap <leader>c :call ToggleCopy()<cr>
-nnoremap <leader>d :Gvdiff<cr>
-nnoremap <leader>h :nohlsearch<cr>
-nnoremap <leader>n :NERDTreeFind<cr>
-nnoremap <leader>p :set paste!<cr>
-
-let g:ctrlp_cmd = 'CtrlPMixed'
-
-" Format JSON
-nnoremap <leader>j :%!python -m json.tool<cr>
-
-nnoremap <leader>l :w \| :VimuxRunLastCommand<cr>
-nnoremap <leader>m :VimuxPromptCommand<cr>
-nnoremap <leader>s :VimuxInterruptRunner<cr>
-
 " Forgot to sudo when opening a file
 cnoremap w!! %!sudo tee > /dev/null %
 
-" Remap jj to escape in insert mode.
-" Also save the file
+" Remap jj to escape in insert mode
+" Also save the file because why not
 inoremap jj <esc>:w<cr>
 
 " Ctrl-jklm changes to that split
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
+
+" This doesn't work in neovim yet, though there is a workaround in
+" https://github.com/neovim/neovim/issues/2048
 nnoremap <c-h> <c-w>h
 
-" Next/previous in quickfix list
-nnoremap <c-n> :cnext<cr>
-nnoremap <c-p> :cprevious<cr>
+nnoremap <leader>c :call ToggleCopy()<cr>
+nnoremap <leader>d :Gvdiff<cr>
+nnoremap <leader>f :Unite file buffer<cr>
+nnoremap <leader>h :nohlsearch<cr>
+nnoremap <leader>j :%!python -m json.tool<cr>
+nnoremap <leader>n :NERDTreeFind<cr>
+nnoremap <leader>p :set paste!<cr>
+
+nnoremap <leader>l :w \| :VimuxRunLastCommand<cr>
+nnoremap <leader>m :VimuxPromptCommand<cr>
+nnoremap <leader>s :VimuxInterruptRunner<cr>
+
+" * only highlight, not move
+nnoremap * :set hlsearch<cr>:let @/="\\<".expand("<cword>")."\\>"<cr>
+
+" Select pasted text
+nnoremap gp `[v`]
 
 " Improve up/down movement on wrapped lines
 nnoremap j gj
 nnoremap k gk
 
-" Search for files
-let g:ctrlp_map = '<leader>f'
-
-" * only highlight, not move
-nnoremap * :set hlsearch<cr>:let @/="\\<".expand("<cword>")."\\>"<cr>
-
-" Smart tab completion
-inoremap <tab> <c-r>=CompleteOrTab()<cr>
-
-" Select pasted text
-nnoremap gp `[v`]
-
-" Smart matching
-runtime macros/matchit.vim
-
 " Switch case
 vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgv
-
-" Line and column numbers in modeline
-set ruler
-
-" Open file in previous buffer
-let g:netrw_browse_split = 4
-
-" Default to tree mode
-let g:netrw_liststyle=3

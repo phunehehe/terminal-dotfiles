@@ -1,9 +1,6 @@
 [submodule "_vim/bundle/nerdtree"]
 	path = _vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "_vim/bundle/ctrlp.vim"]
-	path = _vim/bundle/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "_vim/bundle/vim-easymotion"]
 	path = _vim/bundle/vim-easymotion
 	url = https://github.com/easymotion/vim-easymotion.git
@@ -58,3 +55,6 @@
 [submodule "_vim/bundle/vimux"]
 	path = _vim/bundle/vimux
 	url = https://github.com/benmills/vimux.git
+[submodule "_vim/bundle/unite.vim"]
+	path = _vim/bundle/unite.vim
+	url = https://github.com/Shougo/unite.vim.git
