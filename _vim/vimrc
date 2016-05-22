@@ -208,7 +208,7 @@ nnoremap <c-h> <c-w>h
 
 nnoremap <leader>c :call ToggleCopy()<cr>
 nnoremap <leader>d :Gvdiff<cr>
-nnoremap <leader>f :Unite file buffer<cr>
+nnoremap <leader>f :Unite file_rec<cr>
 nnoremap <leader>h :nohlsearch<cr>
 nnoremap <leader>j :%!python -m json.tool<cr>
 nnoremap <leader>n :NERDTreeFind<cr>
