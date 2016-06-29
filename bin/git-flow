@@ -14,7 +14,7 @@ git log --first-parent --pretty=%H "$unstable".."$stable" \
     # This doesn't work for some reason
     # if git log --pretty=%s $unstable | grep --quiet "$s"
 
-    if git log --pretty=%s "$unstable" | grep "$s" > /dev/null
+    if git log --pretty=%s "$unstable" | grep --fixed-string "$s" > /dev/null
     then
       continue
     fi
