@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -efuo pipefail
+#set -x
+
+unstable=$1
+stable=$2
+
+git log --first-parent --pretty=%H "$unstable".."$stable" \
+| while read -r c
+  do
+    s=$(git show --no-patch --format=format:%s "$c")
+
+    # This doesn't work for some reason
+    # if git log --pretty=%s $unstable | grep --quiet "$s"
+
+    if git log --pretty=%s "$unstable" | grep "$s" > /dev/null
+    then
+      continue
+    fi
+
+    echo "$c $s"
+  done
