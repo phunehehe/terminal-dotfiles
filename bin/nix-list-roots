@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -efuo pipefail
+
+recurse() {
+    find -L "$1" -maxdepth 1 -mindepth 1 \
+    | while read -r f
+      do
+          [[ -e "$f" ]] || continue
+          c=$(readlink --canonicalize "$f")
+          if [[ $c == /nix/store/* ]]
+          then
+              echo "$f -> $c"
+          else
+              recurse "$f"
+          fi
+      done
+}
+
+recurse /nix/var/nix/gcroots
