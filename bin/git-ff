@@ -2,7 +2,7 @@
 
 set -eufx
 
-git remote update
+git fetch --all --prune
 
 git merge --ff-only @{upstream}
 git submodule update --init --recursive
