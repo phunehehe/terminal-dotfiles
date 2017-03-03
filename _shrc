@@ -18,10 +18,6 @@ alias ls='ls --almost-all --classify --human-readable --color=auto'
 alias rm='~/terminal-dotfiles/garbage-io/garbage-in'
 alias screen='screen -DR'
 
-# Tmux on Centos 6 is too old for this
-#alias tmux='tmux new-session -AD -s the-one'
-alias tmux='tmux attach || tmux new-session'
-
 
 path_extras="/sbin /usr/sbin /usr/local/sbin $HOME/terminal-dotfiles/bin $HOME/.cabal/bin $HOME/bin"
 
