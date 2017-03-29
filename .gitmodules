@@ -1,60 +1,9 @@
-[submodule "_vim/bundle/nerdtree"]
-	path = _vim/bundle/nerdtree
-	url = git://github.com/scrooloose/nerdtree.git
-[submodule "_vim/bundle/vim-easymotion"]
-	path = _vim/bundle/vim-easymotion
-	url = https://github.com/easymotion/vim-easymotion.git
-[submodule "_vim/bundle/vim-fugitive"]
-	path = _vim/bundle/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
-[submodule "_vim/bundle/vim-surround"]
-	path = _vim/bundle/vim-surround
-	url = git://github.com/tpope/vim-surround.git
-[submodule "vim/vim-pathogen"]
-	path = _vim/vim-pathogen
-	url = git://github.com/tpope/vim-pathogen.git
-[submodule "_vim/bundle/po.vim"]
-	path = _vim/bundle/po.vim
-	url = git://github.com/vim-scripts/po.vim.git
-[submodule "_vim/bundle/vim-repeat"]
-	path = _vim/bundle/vim-repeat
-	url = git://github.com/tpope/vim-repeat.git
-[submodule "_vim/bundle/acp"]
-	path = _vim/bundle/acp
-	url = git://github.com/eikenberry/acp.git
-[submodule "_vim/bundle/undotree"]
-	path = _vim/bundle/undotree
-	url = git://github.com/mbbill/undotree.git
-[submodule "_vim/bundle/vim-kolor"]
-	path = _vim/bundle/vim-kolor
-	url = git://github.com/zeis/vim-kolor.git
 [submodule "zsh-syntax-highlighting"]
 	path = zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "_vim/bundle/vim-abolish"]
-	path = _vim/bundle/vim-abolish
-	url = https://github.com/tpope/vim-abolish.git
-[submodule "_vim/bundle/vim-unimpaired"]
-	path = _vim/bundle/vim-unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
-[submodule "_vim/bundle/vim-polyglot"]
-	path = _vim/bundle/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot.git
 [submodule "dircolors-solarized"]
 	path = dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized.git
 [submodule "garbage-io"]
 	path = garbage-io
 	url = https://github.com/phunehehe/garbage-io.git
-[submodule "_vim/bundle/rainbow"]
-	path = _vim/bundle/rainbow
-	url = https://github.com/luochen1990/rainbow.git
-[submodule "_vim/bundle/vim-nix"]
-	path = _vim/bundle/vim-nix
-	url = https://github.com/LnL7/vim-nix.git
-[submodule "_vim/bundle/vimux"]
-	path = _vim/bundle/vimux
-	url = https://github.com/benmills/vimux.git
-[submodule "_vim/bundle/unite.vim"]
-	path = _vim/bundle/unite.vim
-	url = https://github.com/Shougo/unite.vim.git
