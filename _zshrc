@@ -43,6 +43,8 @@ local_config="$HOME/.zshrc-local"
 test -f "$local_config" && . "$local_config"
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern line)
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[path_prefix]='none'
 . ~/terminal-dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Always return success
