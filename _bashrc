@@ -11,13 +11,7 @@ prompt_escape() {
     echo "\[$1\]"
 }
 prompt_date='\D{%H:%M:%S}'
-. ~/.shrc
 PROMPT_COMMAND=my_prompt
-
-
-# Load local config if exists
-local_config="$HOME/.bashrc-local"
-test -f "$local_config" && . "$local_config"
 
 
 # Always return success

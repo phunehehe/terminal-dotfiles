@@ -3,7 +3,4 @@ if [ $BASH_VERSION ]
 then
     # It means bash is started as a login shell
     . ~/.bashrc
-else
-    # It means .profile is executed during X's startup process
-    . ~/.shrc
 fi
