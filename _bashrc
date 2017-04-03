@@ -1,18 +1,1 @@
-#!/bin/bash
-
-
-export HISTCONTROL=erasedups
-export HISTSIZE=10000
-shopt -s histappend
-shopt -s globstar
-
-
-prompt_escape() {
-    echo "\[$1\]"
-}
-prompt_date='\D{%H:%M:%S}'
-PROMPT_COMMAND=my_prompt
-
-
-# Always return success
-true
+_profile

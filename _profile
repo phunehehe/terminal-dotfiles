@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
-if [ $BASH_VERSION ]
-then
-    # It means bash is started as a login shell
-    . ~/.bashrc
-fi
+
+export LD_LIBRARY_PATH=$HOME/lib
+
+extras=(
+    $HOME/.nix-profile/bin
+    $HOME/bin
+    $HOME/terminal-dotfiles/bin
+)
+for extra in ${extras[*]}
+do
+    [[ -d "$extra" ]] \
+ && [[ ":$PATH:" != *:"$extra":* ]] \
+ && PATH="$extra:$PATH"
+done
